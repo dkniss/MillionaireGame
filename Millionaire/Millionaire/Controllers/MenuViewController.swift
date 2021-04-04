@@ -16,7 +16,7 @@ class MenuViewController: UIViewController {
     
     private func setupBackground() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "startScreenBackground")
+        backgroundImage.image = UIImage(named: "background")
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }

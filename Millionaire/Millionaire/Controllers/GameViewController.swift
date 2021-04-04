@@ -71,14 +71,14 @@ class GameViewController: UIViewController {
     
     private func setupBackground() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "startScreenBackground")
+        backgroundImage.image = UIImage(named: "background")
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
     
     private func configureQuestion() {
         answersCount += 1
-      
+        
         if answersCount <= questions.count {
             
             questionsCounter.text = "Вопрос \(answersCount) из \(questions.count)"
@@ -89,6 +89,7 @@ class GameViewController: UIViewController {
             answerB.setTitle("B: " + (currentQuestion.answers["B"] ?? ""), for: .normal)
             answerC.setTitle("C: " + (currentQuestion.answers["C"] ?? ""), for: .normal)
             answerD.setTitle("D: " + (currentQuestion.answers["D"] ?? ""), for: .normal)
+            
         } else {
             endGame()
             
@@ -107,7 +108,7 @@ class GameViewController: UIViewController {
             alertVC.addAction(action)
             present(alertVC, animated: true)
         } else {
-            let alertVC = UIAlertController(title: "Неверно!", message: "Игра окончена", preferredStyle: .alert)
+            let alertVC = UIAlertController(title: "Игра окончена!", message: "Вы ответили на \(self.answersCount - 1) из \(self.questions.count) вопросов", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .destructive, handler: { _ in
                 self.delegate?.didEndGame(withResult: self.answersCount - 1, with: self.questions.count)
                 self.dismiss(animated: true)

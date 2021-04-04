@@ -156,9 +156,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCf-2U-L87">
-                                <rect key="frame" x="7" y="200" width="400" height="20.5"/>
+                                <rect key="frame" x="32" y="200" width="350" height="20.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="2Q7-jp-QqH"/>
+                                    <constraint firstAttribute="width" constant="350" id="2Q7-jp-QqH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
