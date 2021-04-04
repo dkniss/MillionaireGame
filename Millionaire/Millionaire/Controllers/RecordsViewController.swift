@@ -39,7 +39,7 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let currentRecord = Game.shared.records[indexPath.row]
         
-        cell.textLabel?.text = "Результат: \(currentRecord.score)"
+        cell.textLabel?.text = "Результат: \(currentRecord.score)/\(currentRecord.questionsCount)"
         cell.detailTextLabel?.text = DateFormatter.localizedString(from: currentRecord.date, dateStyle: .short, timeStyle: .short)
         
         return cell

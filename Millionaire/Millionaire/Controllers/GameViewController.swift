@@ -8,7 +8,7 @@
 import UIKit
 
 protocol GameViewControllerDelegate {
-    func didEndGame(withResult result: Int)
+    func didEndGame(withResult result: Int,with questionsCount: Int)
 }
 
 class GameViewController: UIViewController {
@@ -50,7 +50,7 @@ class GameViewController: UIViewController {
         Question(question: "Что является характеристикой коллекционного вина?", answers: ["A":"Стойкость","B":"Выдержка","C":"Выносливость","D":"Трезвость"], correctAnswer: "B")
     ]
     
-    var questionsCount = 0
+    var answersCount = 0
     
     let gameSession = GameSession()
     
@@ -74,13 +74,13 @@ class GameViewController: UIViewController {
     }
     
     private func configureQuestion() {
-        questionsCount += 1
+        answersCount += 1
       
-        if questionsCount <= questions.count {
+        if answersCount <= questions.count {
             
-            questionsCounter.text = "Вопрос \(questionsCount) из \(questions.count)"
+            questionsCounter.text = "Вопрос \(answersCount) из \(questions.count)"
             
-            let currentQuestion = questions[questionsCount - 1]
+            let currentQuestion = questions[answersCount - 1]
             question.text = currentQuestion.question
             answerA.setTitle("A: " + (currentQuestion.answers["A"] ?? ""), for: .normal)
             answerB.setTitle("B: " + (currentQuestion.answers["B"] ?? ""), for: .normal)
@@ -106,7 +106,7 @@ class GameViewController: UIViewController {
         } else {
             let alertVC = UIAlertController(title: "Неверно!", message: "Игра окончена", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .destructive, handler: { _ in
-                self.delegate?.didEndGame(withResult: self.questionsCount - 1)
+                self.delegate?.didEndGame(withResult: self.answersCount - 1, with: self.questions.count)
                 self.dismiss(animated: true)
             })
             alertVC.addAction(action)
@@ -117,7 +117,7 @@ class GameViewController: UIViewController {
     private func endGame() {
         let alertVC = UIAlertController(title: "Игра окончена!", message: "Вы ответили на все вопросы", preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: { _ in
-            self.delegate?.didEndGame(withResult: self.questionsCount - 1)
+            self.delegate?.didEndGame(withResult: self.answersCount - 1, with: self.questions.count)
             self.dismiss(animated: true)
         })
         alertVC.addAction(action)

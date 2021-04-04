@@ -9,6 +9,7 @@ import Foundation
 
 struct Record: Codable {
     let score: Int
+    let questionsCount: Int
     let date: Date
 }
 
