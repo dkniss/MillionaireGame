@@ -8,7 +8,7 @@
 import UIKit
 
 class GameViewController: UIViewController {
-    
+ 
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var questionsCounter: UILabel!
     @IBOutlet weak var answersView: UIView!
@@ -46,9 +46,13 @@ class GameViewController: UIViewController {
     ]
     
     var questionsCount = 0
-
+   
+    let gameSession = GameSession()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        Game.shared.gameSession = gameSession
+        gameSession.delegate = self
         setupBackground()
         questions.shuffle()
         configureQuestion()
@@ -65,7 +69,6 @@ class GameViewController: UIViewController {
     private func configureQuestion() {
         questionsCount += 1
       
-        
         if questionsCount <= questions.count {
             
             questionsCounter.text = "Вопрос \(questionsCount) из \(questions.count)"
@@ -77,19 +80,14 @@ class GameViewController: UIViewController {
             answerC.setTitle("C: " + (currentQuestion.answers["C"] ?? ""), for: .normal)
             answerD.setTitle("D: " + (currentQuestion.answers["D"] ?? ""), for: .normal)
         } else {
-            let alertVC = UIAlertController(title: "Игра окончена!", message: "Вы ответили на все вопросы", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Ok", style: .default, handler: { _ in
-                self.dismiss(animated: true)
-            })
-            alertVC.addAction(action)
-            present(alertVC, animated: true)
+            endGame()
+            
         }
     }
     
     @objc private func checkAnswer(_ sender: UIButton) {
         guard let currentQuestion = questions.filter({$0.question == question.text}).first else { return }
         let correctAnswer = currentQuestion.correctAnswer
-        
         
         if sender.title(for: .normal) == correctAnswer + ": " + (currentQuestion.answers[correctAnswer] ?? "") {
             let alertVC = UIAlertController(title: "Правильно!", message: "Переходим к следующему вопросу", preferredStyle: .alert)
@@ -101,11 +99,34 @@ class GameViewController: UIViewController {
         } else {
             let alertVC = UIAlertController(title: "Неверно!", message: "Игра окончена", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .destructive, handler: { _ in
-                self.dismiss(animated: true)
+                self.gameSession.delegate?.didEndGame(with: self.questionsCount - 1)
             })
             alertVC.addAction(action)
             present(alertVC, animated: true)
         }
     }
+    
+    private func endGame() {
+        let alertVC = UIAlertController(title: "Игра окончена!", message: "Вы ответили на все вопросы", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            self.gameSession.delegate?.didEndGame(with: self.questionsCount - 1)
+        })
+        alertVC.addAction(action)
+        present(alertVC, animated: true)
+    }
 }
+
+extension GameViewController: GameSessionDelegate {
+    func didEndGame(with result: Int) {
+        let record = Record(score: result, date: Date())
+        Game.shared.addRecord(record)
+        self.dismiss(animated: true)
+    }
+    
+    
+}
+
+
+
+
 

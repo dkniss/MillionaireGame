@@ -9,6 +9,8 @@ import UIKit
 
 class RecordsViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     @IBAction func exit(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
@@ -25,4 +27,23 @@ class RecordsViewController: UIViewController {
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
+}
+
+extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        Game.shared.records.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell",for: indexPath)
+        
+        let currentRecord = Game.shared.records[indexPath.row]
+        
+        cell.textLabel?.text = "Результат: \(currentRecord.score)"
+        cell.detailTextLabel?.text = DateFormatter.localizedString(from: currentRecord.date, dateStyle: .short, timeStyle: .short)
+        
+        return cell
+    }
+    
+    
 }
