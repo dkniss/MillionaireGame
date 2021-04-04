@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol GameViewControllerDelegate {
+    func didEndGame(withResult result: Int)
+}
+
 class GameViewController: UIViewController {
+    
  
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var questionsCounter: UILabel!
@@ -46,13 +51,15 @@ class GameViewController: UIViewController {
     ]
     
     var questionsCount = 0
-   
+    
     let gameSession = GameSession()
     
+    var delegate: GameViewControllerDelegate?
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         Game.shared.gameSession = gameSession
-        gameSession.delegate = self
+        self.delegate = gameSession
         setupBackground()
         questions.shuffle()
         configureQuestion()
@@ -99,7 +106,8 @@ class GameViewController: UIViewController {
         } else {
             let alertVC = UIAlertController(title: "Неверно!", message: "Игра окончена", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .destructive, handler: { _ in
-                self.gameSession.delegate?.didEndGame(with: self.questionsCount - 1)
+                self.delegate?.didEndGame(withResult: self.questionsCount - 1)
+                self.dismiss(animated: true)
             })
             alertVC.addAction(action)
             present(alertVC, animated: true)
@@ -109,22 +117,14 @@ class GameViewController: UIViewController {
     private func endGame() {
         let alertVC = UIAlertController(title: "Игра окончена!", message: "Вы ответили на все вопросы", preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: { _ in
-            self.gameSession.delegate?.didEndGame(with: self.questionsCount - 1)
+            self.delegate?.didEndGame(withResult: self.questionsCount - 1)
+            self.dismiss(animated: true)
         })
         alertVC.addAction(action)
         present(alertVC, animated: true)
     }
 }
 
-extension GameViewController: GameSessionDelegate {
-    func didEndGame(with result: Int) {
-        let record = Record(score: result, date: Date())
-        Game.shared.addRecord(record)
-        self.dismiss(animated: true)
-    }
-    
-    
-}
 
 
 
