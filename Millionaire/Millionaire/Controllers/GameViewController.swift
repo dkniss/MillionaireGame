@@ -16,7 +16,9 @@ class GameViewController: UIViewController {
  
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var questionsCounter: UILabel!
-    @IBOutlet weak var answersView: UIView!
+    @IBOutlet weak var answersStackView: UIStackView!
+    @IBOutlet weak var answersSubviewA: UIStackView!
+    @IBOutlet weak var answersSubviewB: UIStackView!
     @IBOutlet weak var answerA: UIButton! {
         didSet {
             answerA.addTarget(self, action: #selector(checkAnswer), for: .touchUpInside)
