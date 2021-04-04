@@ -8,11 +8,16 @@
 import UIKit
 
 class RecordsViewController: UIViewController {
+    
+    @IBAction func exit(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackground()
     }
+
     
     private func setupBackground() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)

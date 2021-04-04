@@ -4,14 +4,13 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MenuViewController" customModule="Millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="MenuViewController" customModule="Millionaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,26 +54,43 @@
                             <constraint firstItem="5d1-ZV-2nw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="zgP-0d-APA"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dzP-e9-8fk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-145" y="70"/>
+            <point key="canvasLocation" x="763.768115942029" y="69.642857142857139"/>
         </scene>
         <!--Records View Controller-->
         <scene sceneID="aqX-Zj-Uef">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="g38-xU-lNM" customClass="RecordsViewController" customModule="Millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="g38-xU-lNM" customClass="RecordsViewController" customModule="Millionaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ybs-28-CBt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTq-c7-iCg">
+                                <rect key="frame" x="20" y="44" width="49" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Выход">
+                                    <color key="titleColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="exit:" destination="g38-xU-lNM" eventType="touchUpInside" id="uqi-oA-TME"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WeL-x7-cYw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.063639871776103973" green="0.19010648131370544" blue="0.51005792617797852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eTq-c7-iCg" firstAttribute="leading" secondItem="WeL-x7-cYw" secondAttribute="leading" constant="20" id="Ird-B4-s0r"/>
+                            <constraint firstItem="eTq-c7-iCg" firstAttribute="top" secondItem="WeL-x7-cYw" secondAttribute="top" id="WLD-hg-alK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vvu-wK-LLb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqM-JB-fWg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="467"/>
+            <point key="canvasLocation" x="1668.1159420289857" y="466.74107142857139"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="Je9-Pk-K3P">
@@ -83,20 +99,33 @@
                     <view key="view" contentMode="scaleToFill" id="Ykw-um-UxD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwz-2b-ToJ">
+                                <rect key="frame" x="20" y="44" width="49" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Выход">
+                                    <color key="titleColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="exit:" destination="R8n-4y-k24" eventType="touchUpInside" id="jKQ-x2-C3k"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Zq0-eb-zMV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.063639871776103973" green="0.19010648131370544" blue="0.51005792617797852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fwz-2b-ToJ" firstAttribute="top" secondItem="Zq0-eb-zMV" secondAttribute="top" id="7V1-9c-SjY"/>
+                            <constraint firstItem="fwz-2b-ToJ" firstAttribute="leading" secondItem="Zq0-eb-zMV" secondAttribute="leading" constant="20" id="xzc-FX-5uG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="C2j-AP-ZhX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34N-GN-SLu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="-230"/>
+            <point key="canvasLocation" x="1668.1159420289857" y="-230.35714285714283"/>
         </scene>
     </scenes>
     <resources>
         <image name="logo" width="564" height="251"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
