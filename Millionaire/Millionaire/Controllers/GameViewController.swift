@@ -1,5 +1,5 @@
 //
-//  MenuViewController.swift
+//  GameViewController.swift
 //  Millionaire
 //
 //  Created by Daniil Kniss on 04.04.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
+class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,5 +20,4 @@ class MenuViewController: UIViewController {
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
-
 }
