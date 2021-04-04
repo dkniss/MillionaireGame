@@ -19,6 +19,7 @@
 		4DC92BCC2619BF1F004D02F9 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC92BCB2619BF1F004D02F9 /* Question.swift */; };
 		4DC92BD02619E6F4004D02F9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC92BCF2619E6F4004D02F9 /* Game.swift */; };
 		4DC92BD42619E708004D02F9 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC92BD32619E708004D02F9 /* GameSession.swift */; };
+		4DC92BD8261A295F004D02F9 /* RecordsCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC92BD7261A295F004D02F9 /* RecordsCareTaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4DC92BCB2619BF1F004D02F9 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		4DC92BCF2619E6F4004D02F9 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4DC92BD32619E708004D02F9 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
+		4DC92BD7261A295F004D02F9 /* RecordsCareTaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCareTaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				4DC92BCF2619E6F4004D02F9 /* Game.swift */,
 				4DC92BD32619E708004D02F9 /* GameSession.swift */,
+				4DC92BD7261A295F004D02F9 /* RecordsCareTaker.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				4DC92BC12619B30A004D02F9 /* MenuViewController.swift in Sources */,
 				4DC92BCC2619BF1F004D02F9 /* Question.swift in Sources */,
 				4DC92BC82619B51A004D02F9 /* RecordsViewController.swift in Sources */,
+				4DC92BD8261A295F004D02F9 /* RecordsCareTaker.swift in Sources */,
 				4DC92BD42619E708004D02F9 /* GameSession.swift in Sources */,
 				4DC92BD02619E6F4004D02F9 /* Game.swift in Sources */,
 			);

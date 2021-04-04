@@ -18,6 +18,7 @@ class RecordsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackground()
+        tableView.backgroundColor = .clear
     }
 
     
@@ -41,6 +42,7 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.textLabel?.text = "Результат: \(currentRecord.score)/\(currentRecord.questionsCount)"
         cell.detailTextLabel?.text = DateFormatter.localizedString(from: currentRecord.date, dateStyle: .short, timeStyle: .short)
+        cell.backgroundColor = .clear
         
         return cell
     }

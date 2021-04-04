@@ -19,7 +19,13 @@ class Game {
     
     weak var gameSession: GameSession?
     
-    private(set) var records: [Record] = []
+    private(set) var records: [Record] {
+        didSet {
+            recordsCaretaker.save(records: self.records)
+        }
+    }
+    
+    private let recordsCaretaker = RecordsCareTaker()
     
     func addRecord(_ record: Record) {
         self.records.append(record)
@@ -30,7 +36,9 @@ class Game {
     }
     
     
-    private init() {}
+    private init() {
+        self.records = self.recordsCaretaker.retrieveRecords()
+    }
     
 }
 
