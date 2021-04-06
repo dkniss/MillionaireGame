@@ -11,6 +11,7 @@ struct Record: Codable {
     let score: Int
     let questionsCount: Int
     let date: Date
+    var scoreInPercents: Double 
 }
 
 class Game {

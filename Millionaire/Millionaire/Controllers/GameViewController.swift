@@ -13,35 +13,32 @@ protocol GameViewControllerDelegate {
 
 class GameViewController: UIViewController {
     
- 
+    // MARK: IBOutlets
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var questionsCounter: UILabel!
     @IBOutlet weak var answersStackView: UIStackView!
     @IBOutlet weak var answersSubviewA: UIStackView!
     @IBOutlet weak var answersSubviewB: UIStackView!
-    @IBOutlet weak var answerA: UIButton! {
-        didSet {
-            answerA.addTarget(self, action: #selector(checkAnswer), for: .touchUpInside)
-        }
-    }
-    @IBOutlet weak var answerB: UIButton! {
-        didSet {
-            answerB.addTarget(self, action: #selector(checkAnswer), for: .touchUpInside)
-        }
-    }
-    @IBOutlet weak var answerC: UIButton! {
-        didSet {
-            answerC.addTarget(self, action: #selector(checkAnswer), for: .touchUpInside)
-        }
-    }
-    @IBOutlet weak var answerD: UIButton! {
-        didSet {
-            answerD.addTarget(self, action: #selector(checkAnswer), for: .touchUpInside)
-        }
-    }
+    @IBOutlet weak var answerA: UIButton!
+    @IBOutlet weak var answerB: UIButton!
+    @IBOutlet weak var answerC: UIButton!
+    @IBOutlet weak var answerD: UIButton!
     
+    // MARK: IBActions
     @IBAction func exit(_ sender: UIButton) {
         self.dismiss(animated: true)
+    }
+    @IBAction func buttonAPressed(_ sender: UIButton) {
+        checkAnswer(sender)
+    }
+    @IBAction func buttonBPressed(_ sender: UIButton) {
+        checkAnswer(sender)
+    }
+    @IBAction func buttonCPressed(_ sender: UIButton) {
+        checkAnswer(sender)
+    }
+    @IBAction func buttonDPressed(_ sender: UIButton) {
+        checkAnswer(sender)
     }
     
     var questions = [
@@ -68,10 +65,9 @@ class GameViewController: UIViewController {
         configureQuestion()
     }
     
-    
     private func setupBackground() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background")
+        backgroundImage.image = UIImage(named: "Background")
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
@@ -89,18 +85,17 @@ class GameViewController: UIViewController {
             answerB.setTitle("B: " + (currentQuestion.answers["B"] ?? ""), for: .normal)
             answerC.setTitle("C: " + (currentQuestion.answers["C"] ?? ""), for: .normal)
             answerD.setTitle("D: " + (currentQuestion.answers["D"] ?? ""), for: .normal)
-            
         } else {
             endGame()
-            
         }
     }
     
-    @objc private func checkAnswer(_ sender: UIButton) {
-        guard let currentQuestion = questions.filter({$0.question == question.text}).first else { return }
+    private func checkAnswer(_ sender: UIButton) {
+        let currentQuestion = questions[answersCount - 1]
         let correctAnswer = currentQuestion.correctAnswer
+        let answersDict = ["A":0,"B":1,"C":2,"D":3]
         
-        if sender.title(for: .normal) == correctAnswer + ": " + (currentQuestion.answers[correctAnswer] ?? "") {
+        if sender.tag == answersDict[correctAnswer] {
             let alertVC = UIAlertController(title: "Правильно!", message: "Переходим к следующему вопросу", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .default, handler: { _ in
                 self.configureQuestion()
@@ -108,18 +103,21 @@ class GameViewController: UIViewController {
             alertVC.addAction(action)
             present(alertVC, animated: true)
         } else {
-            let alertVC = UIAlertController(title: "Игра окончена!", message: "Вы ответили на \(self.answersCount - 1) из \(self.questions.count) вопросов", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Ok", style: .destructive, handler: { _ in
-                self.delegate?.didEndGame(withResult: self.answersCount - 1, with: self.questions.count)
-                self.dismiss(animated: true)
-            })
-            alertVC.addAction(action)
-            present(alertVC, animated: true)
+            endGame()
         }
     }
     
     private func endGame() {
-        let alertVC = UIAlertController(title: "Игра окончена!", message: "Вы ответили на все вопросы", preferredStyle: .alert)
+        let title = "Игра окончена!"
+        var message = ""
+        
+        if (self.answersCount - 1) < self.questions.count {
+            message = "Вы ответили на \(self.answersCount - 1) из \(self.questions.count) вопросов"
+        } else {
+            message = "Вы ответили на все вопросы"
+        }
+        
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: { _ in
             self.delegate?.didEndGame(withResult: self.answersCount - 1, with: self.questions.count)
             self.dismiss(animated: true)

@@ -21,10 +21,9 @@ class RecordsViewController: UIViewController {
         tableView.backgroundColor = .clear
     }
 
-    
     private func setupBackground() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background")
+        backgroundImage.image = UIImage(named: "Background")
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
@@ -40,12 +39,10 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let currentRecord = Game.shared.records[indexPath.row]
         
-        cell.textLabel?.text = "Результат: \(currentRecord.score)/\(currentRecord.questionsCount)"
+        cell.textLabel?.text = "Результат: \(currentRecord.score)/\(currentRecord.questionsCount) (\(currentRecord.scoreInPercents)%)"
         cell.detailTextLabel?.text = DateFormatter.localizedString(from: currentRecord.date, dateStyle: .short, timeStyle: .short)
         cell.backgroundColor = .clear
         
         return cell
     }
-    
-    
 }

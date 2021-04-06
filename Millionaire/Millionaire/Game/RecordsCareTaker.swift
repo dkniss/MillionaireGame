@@ -32,6 +32,4 @@ class RecordsCareTaker {
             return []
         }
     }
-    
-    
 }

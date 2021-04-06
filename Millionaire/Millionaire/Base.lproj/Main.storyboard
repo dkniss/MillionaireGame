@@ -182,32 +182,44 @@
                                                 <state key="normal" title="A:">
                                                     <color key="titleColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttonAPressed:" destination="R8n-4y-k24" eventType="touchUpInside" id="HYN-kg-orR"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8o-fK-N8J">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8o-fK-N8J">
                                                 <rect key="frame" x="0.0" y="60" width="197" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <state key="normal" title="C:">
                                                     <color key="titleColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttonCPressed:" destination="R8n-4y-k24" eventType="touchUpInside" id="xw7-mC-hHp"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2El-w5-QZZ">
                                         <rect key="frame" x="197" y="0.0" width="197" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqZ-9t-bzg">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqZ-9t-bzg">
                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <state key="normal" title="B:">
                                                     <color key="titleColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttonBPressed:" destination="R8n-4y-k24" eventType="touchUpInside" id="riu-M2-a9S"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8G-3q-Lpd">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8G-3q-Lpd">
                                                 <rect key="frame" x="0.0" y="60" width="197" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <state key="normal" title="D:">
                                                     <color key="titleColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttonDPressed:" destination="R8n-4y-k24" eventType="touchUpInside" id="BSe-wI-zpy"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

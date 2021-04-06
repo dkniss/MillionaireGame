@@ -10,19 +10,20 @@ import Foundation
 class GameSession {
     var correctAnswers = 0
     var questionsCount = 0
-
 }
 
 extension GameSession: GameViewControllerDelegate {
     func didEndGame(withResult result: Int,with questionsCount: Int) {
         self.correctAnswers = result
         self.questionsCount = questionsCount
-        let record = Record(score: result, questionsCount: questionsCount, date: Date())
+
+        let scoreInPercents = round((Double(result) / Double(questionsCount)) * 100.0)
+      
+        let record = Record(score: result, questionsCount: questionsCount, date: Date(), scoreInPercents: scoreInPercents)
+        
         Game.shared.addRecord(record)
         Game.shared.gameSession = nil
     }
-    
-    
 }
 
 
