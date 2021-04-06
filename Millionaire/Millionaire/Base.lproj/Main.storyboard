@@ -140,7 +140,7 @@
         <!--Game View Controller-->
         <scene sceneID="Je9-Pk-K3P">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="R8n-4y-k24" customClass="GameViewController" customModule="Millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="R8n-4y-k24" customClass="GameViewController" customModule="Millionaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ykw-um-UxD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
