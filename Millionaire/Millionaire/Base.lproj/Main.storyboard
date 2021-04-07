@@ -152,7 +152,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результаты" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="878-Jr-GwF">
-                                <rect key="frame" x="20" y="80" width="164.5" height="36"/>
+                                <rect key="frame" x="20" y="78" width="164.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <color key="textColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -161,7 +161,7 @@
                         <viewLayoutGuide key="safeArea" id="WeL-x7-cYw"/>
                         <color key="backgroundColor" red="0.063639871776103973" green="0.19010648131370544" blue="0.51005792617797852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="878-Jr-GwF" firstAttribute="top" secondItem="eTq-c7-iCg" secondAttribute="bottom" constant="6" id="5zJ-cx-mLO"/>
+                            <constraint firstItem="878-Jr-GwF" firstAttribute="top" secondItem="eTq-c7-iCg" secondAttribute="bottom" constant="4" id="5zJ-cx-mLO"/>
                             <constraint firstItem="WeL-x7-cYw" firstAttribute="bottom" secondItem="FTM-WY-7zo" secondAttribute="bottom" id="98t-Dz-Pqg"/>
                             <constraint firstItem="WeL-x7-cYw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eTq-c7-iCg" secondAttribute="trailing" symbolic="YES" id="9eV-Mw-McG"/>
                             <constraint firstItem="FTM-WY-7zo" firstAttribute="top" secondItem="WeL-x7-cYw" secondAttribute="top" constant="80" id="D99-Nj-slo"/>
@@ -388,7 +388,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F2K-LJ-Hvq">
-                                <rect key="frame" x="0.0" y="114" width="414" height="748"/>
+                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
                                 <color key="backgroundColor" red="0.063639871779999996" green="0.19010648129999999" blue="0.51005792620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -472,7 +472,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавить вопросы" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSj-Tb-ZDl">
-                                <rect key="frame" x="20" y="70" width="269.5" height="36"/>
+                                <rect key="frame" x="20" y="78" width="269.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <color key="textColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -488,10 +488,10 @@
                             <constraint firstItem="uSj-Tb-ZDl" firstAttribute="leading" secondItem="0xL-Sx-O29" secondAttribute="leading" constant="20" id="L1j-ZY-QGn"/>
                             <constraint firstItem="SP7-96-eZ6" firstAttribute="top" secondItem="0xL-Sx-O29" secondAttribute="top" id="MmV-D2-3RU"/>
                             <constraint firstItem="xie-nt-ybk" firstAttribute="centerX" secondItem="AYp-oZ-hbg" secondAttribute="centerX" id="Wzp-0w-nRh"/>
-                            <constraint firstItem="uSj-Tb-ZDl" firstAttribute="top" secondItem="SP7-96-eZ6" secondAttribute="bottom" constant="-4" id="b8l-Wu-ygj"/>
+                            <constraint firstItem="uSj-Tb-ZDl" firstAttribute="top" secondItem="SP7-96-eZ6" secondAttribute="bottom" constant="4" id="b8l-Wu-ygj"/>
                             <constraint firstItem="SP7-96-eZ6" firstAttribute="leading" secondItem="0xL-Sx-O29" secondAttribute="leading" constant="20" id="nsU-Rm-Gtc"/>
                             <constraint firstItem="0xL-Sx-O29" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SP7-96-eZ6" secondAttribute="trailing" symbolic="YES" id="s2f-ky-hPD"/>
-                            <constraint firstItem="F2K-LJ-Hvq" firstAttribute="top" secondItem="0xL-Sx-O29" secondAttribute="top" constant="70" id="v2B-J6-z3u"/>
+                            <constraint firstItem="F2K-LJ-Hvq" firstAttribute="top" secondItem="0xL-Sx-O29" secondAttribute="top" constant="80" id="v2B-J6-z3u"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Cbv-Tp-PyD"/>

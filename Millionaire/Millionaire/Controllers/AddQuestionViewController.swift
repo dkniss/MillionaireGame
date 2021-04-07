@@ -54,7 +54,8 @@ extension AddQuestionViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = configureCell(indexPath: indexPath)
-        cell.backgroundColor = .clear
+        let cellColor = UIColor(white: 0.70,alpha: 0.3)
+        cell.backgroundColor = cellColor
         return cell
     }
     
