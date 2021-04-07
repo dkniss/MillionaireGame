@@ -8,6 +8,10 @@
 import UIKit
 
 class MenuViewController: UIViewController {
+    
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var resultsButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton! 
 
     override func viewDidLoad() {
         super.viewDidLoad()

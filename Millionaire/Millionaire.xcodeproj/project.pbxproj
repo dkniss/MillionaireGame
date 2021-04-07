@@ -20,6 +20,8 @@
 		4DC92BD02619E6F4004D02F9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC92BCF2619E6F4004D02F9 /* Game.swift */; };
 		4DC92BD42619E708004D02F9 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC92BD32619E708004D02F9 /* GameSession.swift */; };
 		4DC92BD8261A295F004D02F9 /* RecordsCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC92BD7261A295F004D02F9 /* RecordsCareTaker.swift */; };
+		4DD79EA7261DFED700111831 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD79EA6261DFED700111831 /* SettingsViewController.swift */; };
+		4DD79EAB261E05B400111831 /* ShuffleQuestionsStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD79EAA261E05B400111831 /* ShuffleQuestionsStrategy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		4DC92BCF2619E6F4004D02F9 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4DC92BD32619E708004D02F9 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		4DC92BD7261A295F004D02F9 /* RecordsCareTaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCareTaker.swift; sourceTree = "<group>"; };
+		4DD79EA6261DFED700111831 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4DD79EAA261E05B400111831 /* ShuffleQuestionsStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleQuestionsStrategy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 		4D6AA8A62619AF5E00A21DD8 /* Millionaire */ = {
 			isa = PBXGroup;
 			children = (
+				4DD79EA9261E058E00111831 /* Strategy */,
 				4DC92BCE2619E6EB004D02F9 /* Game */,
 				4DC92BCA2619BF0D004D02F9 /* Objects */,
 				4DC92BBF2619B2E8004D02F9 /* Controllers */,
@@ -90,6 +95,7 @@
 				4DC92BC02619B30A004D02F9 /* MenuViewController.swift */,
 				4DC92BC42619B502004D02F9 /* GameViewController.swift */,
 				4DC92BC72619B51A004D02F9 /* RecordsViewController.swift */,
+				4DD79EA6261DFED700111831 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -110,6 +116,14 @@
 				4DC92BD7261A295F004D02F9 /* RecordsCareTaker.swift */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		4DD79EA9261E058E00111831 /* Strategy */ = {
+			isa = PBXGroup;
+			children = (
+				4DD79EAA261E05B400111831 /* ShuffleQuestionsStrategy.swift */,
+			);
+			path = Strategy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,7 +198,9 @@
 			files = (
 				4DC92BC52619B502004D02F9 /* GameViewController.swift in Sources */,
 				4D6AA8AC2619AF5E00A21DD8 /* ViewController.swift in Sources */,
+				4DD79EA7261DFED700111831 /* SettingsViewController.swift in Sources */,
 				4D6AA8A82619AF5E00A21DD8 /* AppDelegate.swift in Sources */,
+				4DD79EAB261E05B400111831 /* ShuffleQuestionsStrategy.swift in Sources */,
 				4D6AA8AA2619AF5E00A21DD8 /* SceneDelegate.swift in Sources */,
 				4DC92BC12619B30A004D02F9 /* MenuViewController.swift in Sources */,
 				4DC92BCC2619BF1F004D02F9 /* Question.swift in Sources */,

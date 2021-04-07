@@ -55,13 +55,23 @@ class GameViewController: UIViewController {
     let gameSession = GameSession()
     
     var delegate: GameViewControllerDelegate?
+    
+    private var shuffleQuestionsStrategy: ShuffleStrategy {
+        let isQuestionsShuffled = Game.shared.isQuestionsShuffled
+        switch  isQuestionsShuffled {
+        case true:
+            return ShuffleQuestionsStrategy()
+        case false:
+            return NonShuffleQuestionsStrategy()
+        }
+    }
    
     override func viewDidLoad() {
         super.viewDidLoad()
         Game.shared.gameSession = gameSession
         self.delegate = gameSession
         setupBackground()
-        questions.shuffle()
+        prepareQuestions(questions: questions)
         configureQuestion()
     }
     
@@ -124,6 +134,11 @@ class GameViewController: UIViewController {
         })
         alertVC.addAction(action)
         present(alertVC, animated: true)
+    }
+    
+    private func prepareQuestions(questions: [Question]) {
+        let preparedQuestions = self.shuffleQuestionsStrategy.shuffleQuestions(question: questions)
+        self.questions = preparedQuestions
     }
 }
 

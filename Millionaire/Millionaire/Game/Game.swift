@@ -20,6 +20,11 @@ class Game {
     
     weak var gameSession: GameSession?
     
+    var isQuestionsShuffled: Bool {
+        guard let isShuffled = UserDefaults.standard.value(forKey: "switchOn") as? Bool else {return false}
+        return isShuffled
+    }
+    
     private(set) var records: [Record] {
         didSet {
             recordsCaretaker.save(records: self.records)
