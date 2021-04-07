@@ -9,6 +9,8 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    // MARK: IBOutlets
+    
     @IBOutlet weak var shuffleQuestionsLabel: UILabel!
     @IBOutlet weak var shuffleQuestionsSwitch: UISwitch! {
         didSet {
@@ -21,7 +23,8 @@ class SettingsViewController: UIViewController {
         }
     }
     
-   
+    // MARK: IBActions
+    
     @IBAction func shuffleQuestions(_ sender: UISwitch) {
         if sender.isOn {
             UserDefaults.standard.setValue(true, forKey: "switchOn")
@@ -39,6 +42,8 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         setupBackground()
     }
+    
+    // MARK: Private functions
     
     private func setupBackground() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)

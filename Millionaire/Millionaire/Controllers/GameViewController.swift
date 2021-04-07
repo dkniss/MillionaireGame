@@ -24,7 +24,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var answerC: UIButton!
     @IBOutlet weak var answerD: UIButton!
     
-    // MARK: IBActions
+    // MARK:  IBActions
     @IBAction func exit(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
@@ -41,14 +41,7 @@ class GameViewController: UIViewController {
         checkAnswer(sender)
     }
     
-    var questions = [
-        Question(question: "Как называется популярный рецепт приготовления макарон с мясом?", answers: ["A":"По-деревенски","B":"По-флотски","C":"По-братски","D":"По-божески"], correctAnswer: "B"),
-        Question(question: "Какой флаг развевается над пиратским судном?", answers: ["A":"Грустный Роберт","B":"Печальный Рональд","C":"Смешливый Роналд","D":"Веселый Роджер"], correctAnswer: "D"),
-        Question(question: "Какой газ преобладает в атмосфере Земли?", answers: ["A":"Кислород","B":"Азот","C":"Углекислый газ","D":"Водород"], correctAnswer: "B"),
-        Question(question: "Какой вид спорта не входит в современное пятиборье?", answers: ["A":"Метание копья","B":"Верховая езда","C":"Фехтование","D":"Плавание"], correctAnswer: "A"),
-        Question(question: "Что является характеристикой коллекционного вина?", answers: ["A":"Стойкость","B":"Выдержка","C":"Выносливость","D":"Трезвость"], correctAnswer: "B"),
-        Question(question: "Какая из перечисленных башен самая низкая?", answers: ["A":"Останкинская","B":"Эйфелева","C":"Пизанская","D":"Спасская"], correctAnswer: "C")
-    ]
+    var questions = Game.shared.questions
     
     let gameSession = GameSession()
     
@@ -74,9 +67,9 @@ class GameViewController: UIViewController {
         gameSession.correctAnswers.addObserver(self, options: [.initial, .new]) { (answersCount, _) in
             self.questionsCounter.text = "Вопрос \(answersCount) из \(self.questions.count)"
         }
-      
-        
     }
+    
+    // MARK:  Private functions
     
     private func setupBackground() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)

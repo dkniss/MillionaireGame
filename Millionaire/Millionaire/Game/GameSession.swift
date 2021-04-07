@@ -18,7 +18,6 @@ extension GameSession: GameViewControllerDelegate {
         self.questionsCount = questionsCount
 
         let scoreInPercents = round((Double(result) / Double(questionsCount)) * 100.0)
-      
         let record = Record(score: result, questionsCount: questionsCount, date: Date(), scoreInPercents: scoreInPercents)
         
         Game.shared.addRecord(record)

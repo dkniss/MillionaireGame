@@ -23,6 +23,7 @@
 		4DD79EA7261DFED700111831 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD79EA6261DFED700111831 /* SettingsViewController.swift */; };
 		4DD79EAB261E05B400111831 /* ShuffleQuestionsStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD79EAA261E05B400111831 /* ShuffleQuestionsStrategy.swift */; };
 		4DD79EB0261E205600111831 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD79EAF261E205600111831 /* Observable.swift */; };
+		4DD79EB3261E292C00111831 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD79EB2261E292C00111831 /* AddQuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		4DD79EA6261DFED700111831 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4DD79EAA261E05B400111831 /* ShuffleQuestionsStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleQuestionsStrategy.swift; sourceTree = "<group>"; };
 		4DD79EAF261E205600111831 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		4DD79EB2261E292C00111831 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				4DC92BC42619B502004D02F9 /* GameViewController.swift */,
 				4DC92BC72619B51A004D02F9 /* RecordsViewController.swift */,
 				4DD79EA6261DFED700111831 /* SettingsViewController.swift */,
+				4DD79EB2261E292C00111831 /* AddQuestionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				4DC92BC82619B51A004D02F9 /* RecordsViewController.swift in Sources */,
 				4DC92BD8261A295F004D02F9 /* RecordsCareTaker.swift in Sources */,
 				4DC92BD42619E708004D02F9 /* GameSession.swift in Sources */,
+				4DD79EB3261E292C00111831 /* AddQuestionViewController.swift in Sources */,
 				4DC92BD02619E6F4004D02F9 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
