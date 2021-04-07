@@ -49,7 +49,9 @@
                                     <constraint firstAttribute="width" constant="40" id="2pC-Xt-nJ5"/>
                                     <constraint firstAttribute="height" constant="40" id="acK-0f-63f"/>
                                 </constraints>
+                                <color key="tintColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal">
+                                    <color key="titleColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <imageReference key="image" image="gearshape" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
