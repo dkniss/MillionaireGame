@@ -8,13 +8,13 @@
 import Foundation
 
 class GameSession {
-    var correctAnswers = 0
+    var correctAnswers = Observable<Int>(0)
     var questionsCount = 0
 }
 
 extension GameSession: GameViewControllerDelegate {
     func didEndGame(withResult result: Int,with questionsCount: Int) {
-        self.correctAnswers = result
+        self.correctAnswers.value = result
         self.questionsCount = questionsCount
 
         let scoreInPercents = round((Double(result) / Double(questionsCount)) * 100.0)

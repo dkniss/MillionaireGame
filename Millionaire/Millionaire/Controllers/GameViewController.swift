@@ -50,8 +50,6 @@ class GameViewController: UIViewController {
         Question(question: "Какая из перечисленных башен самая низкая?", answers: ["A":"Останкинская","B":"Эйфелева","C":"Пизанская","D":"Спасская"], correctAnswer: "C")
     ]
     
-    var answersCount = Observable<Int>(0)
-    
     let gameSession = GameSession()
     
     var delegate: GameViewControllerDelegate?
@@ -73,9 +71,10 @@ class GameViewController: UIViewController {
         setupBackground()
         prepareQuestions(questions: questions)
         configureQuestion()
-        self.answersCount.addObserver(self, options: [.initial, .new]) { (answersCount, _) in
+        gameSession.correctAnswers.addObserver(self, options: [.initial, .new]) { (answersCount, _) in
             self.questionsCounter.text = "Вопрос \(answersCount) из \(self.questions.count)"
         }
+      
         
     }
     
@@ -87,11 +86,14 @@ class GameViewController: UIViewController {
     }
     
     private func configureQuestion() {
-        answersCount.value += 1
+     
+        gameSession.correctAnswers.value += 1
         
-        if answersCount.value <= questions.count {
+        let answersCount = gameSession.correctAnswers.value
+        
+        if answersCount <= questions.count {
        
-            let currentQuestion = questions[answersCount.value - 1]
+            let currentQuestion = questions[answersCount - 1]
             question.text = currentQuestion.question
             answerA.setTitle("A: " + (currentQuestion.answers["A"] ?? ""), for: .normal)
             answerB.setTitle("B: " + (currentQuestion.answers["B"] ?? ""), for: .normal)
@@ -103,7 +105,8 @@ class GameViewController: UIViewController {
     }
     
     private func checkAnswer(_ sender: UIButton) {
-        let currentQuestion = questions[answersCount.value - 1]
+        let answersCount = gameSession.correctAnswers.value
+        let currentQuestion = questions[answersCount - 1]
         let correctAnswer = currentQuestion.correctAnswer
         let answersDict = ["A":0,"B":1,"C":2,"D":3]
         
@@ -122,16 +125,17 @@ class GameViewController: UIViewController {
     private func endGame() {
         let title = "Игра окончена!"
         var message = ""
+        let answersCount = gameSession.correctAnswers.value
         
-        if (self.answersCount.value - 1) < self.questions.count {
-            message = "Вы ответили на \(self.answersCount.value - 1) из \(self.questions.count) вопросов"
+        if (answersCount - 1) < self.questions.count {
+            message = "Вы ответили на \(answersCount - 1) из \(self.questions.count) вопросов"
         } else {
             message = "Вы ответили на все вопросы верно!"
         }
         
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: { _ in
-            self.delegate?.didEndGame(withResult: self.answersCount.value - 1, with: self.questions.count)
+            self.delegate?.didEndGame(withResult: answersCount - 1, with: self.questions.count)
             self.dismiss(animated: true)
         })
         alertVC.addAction(action)
