@@ -45,14 +45,38 @@ class AddQuestionViewController: UIViewController {
 }
 
 extension AddQuestionViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return questionsToAdd
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AddQuestionCell", for: indexPath)
+        let cell = configureCell(indexPath: indexPath)
         cell.backgroundColor = .clear
         return cell
+    }
+    
+    private func configureCell(indexPath: IndexPath) -> UITableViewCell {
+        let defaultCell = UITableViewCell()
+        switch indexPath.row {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell", for: indexPath) as? QuestionCell else { return defaultCell }
+            return cell
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AnswersCell", for: indexPath) as? AnswersCell else { return defaultCell }
+            return cell
+        case 2:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectAnswerCell", for: indexPath) as? CorrectAnswerCell else { return defaultCell }
+            return cell
+        case 3:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AddQuestionCell", for: indexPath) as? AddQuestionCell else { return defaultCell }
+            return cell
+        default:
+            return defaultCell
+        }
+        
     }
     
     

@@ -115,7 +115,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FTM-WY-7zo">
-                                <rect key="frame" x="0.0" y="84" width="414" height="778"/>
+                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
                                 <color key="backgroundColor" red="0.063639871776103973" green="0.19010648131370544" blue="0.51005792617797852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -151,15 +151,23 @@
                                     <outlet property="delegate" destination="g38-xU-lNM" id="Giw-SP-0xS"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результаты" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="878-Jr-GwF">
+                                <rect key="frame" x="20" y="80" width="164.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WeL-x7-cYw"/>
                         <color key="backgroundColor" red="0.063639871776103973" green="0.19010648131370544" blue="0.51005792617797852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="878-Jr-GwF" firstAttribute="top" secondItem="eTq-c7-iCg" secondAttribute="bottom" constant="6" id="5zJ-cx-mLO"/>
                             <constraint firstItem="WeL-x7-cYw" firstAttribute="bottom" secondItem="FTM-WY-7zo" secondAttribute="bottom" id="98t-Dz-Pqg"/>
                             <constraint firstItem="WeL-x7-cYw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eTq-c7-iCg" secondAttribute="trailing" symbolic="YES" id="9eV-Mw-McG"/>
-                            <constraint firstItem="FTM-WY-7zo" firstAttribute="top" secondItem="WeL-x7-cYw" secondAttribute="top" constant="40" id="D99-Nj-slo"/>
+                            <constraint firstItem="FTM-WY-7zo" firstAttribute="top" secondItem="WeL-x7-cYw" secondAttribute="top" constant="80" id="D99-Nj-slo"/>
                             <constraint firstItem="eTq-c7-iCg" firstAttribute="leading" secondItem="WeL-x7-cYw" secondAttribute="leading" constant="20" id="Ird-B4-s0r"/>
                             <constraint firstItem="WeL-x7-cYw" firstAttribute="trailing" secondItem="FTM-WY-7zo" secondAttribute="trailing" id="M5o-Hu-YCy"/>
+                            <constraint firstItem="878-Jr-GwF" firstAttribute="leading" secondItem="WeL-x7-cYw" secondAttribute="leading" constant="20" id="OqN-bG-kT8"/>
                             <constraint firstItem="eTq-c7-iCg" firstAttribute="top" secondItem="WeL-x7-cYw" secondAttribute="top" id="WLD-hg-alK"/>
                             <constraint firstItem="FTM-WY-7zo" firstAttribute="leading" secondItem="WeL-x7-cYw" secondAttribute="leading" id="cLi-99-B4X"/>
                         </constraints>
@@ -379,34 +387,69 @@
                                     <action selector="exit:" destination="QV8-KX-crf" eventType="touchUpInside" id="D8u-tF-qOM"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F2K-LJ-Hvq">
-                                <rect key="frame" x="0.0" y="84" width="414" height="778"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F2K-LJ-Hvq">
+                                <rect key="frame" x="0.0" y="114" width="414" height="748"/>
                                 <color key="backgroundColor" red="0.063639871779999996" green="0.19010648129999999" blue="0.51005792620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddQuestionCell" textLabel="kmF-ec-oNf" detailTextLabel="zhd-jM-jfq" rowHeight="304" style="IBUITableViewCellStyleValue1" id="ewG-rT-nAT">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="304"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="QuestionCell" rowHeight="100" id="ewG-rT-nAT" customClass="QuestionCell" customModule="Millionaire" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ewG-rT-nAT" id="XYX-p2-1zx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="304"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kmF-ec-oNf">
-                                                    <rect key="frame" x="20" y="142" width="35" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeK-JX-9U3">
+                                                    <rect key="frame" x="20" y="39.5" width="67" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <color key="textColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zhd-jM-jfq">
-                                                    <rect key="frame" x="348" y="142" width="46" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите вопрос" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hIv-NB-y1Y">
+                                                    <rect key="frame" x="127" y="33" width="267" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XeK-JX-9U3" firstAttribute="leading" secondItem="XYX-p2-1zx" secondAttribute="leading" constant="20" symbolic="YES" id="P1S-QN-exn"/>
+                                                <constraint firstItem="hIv-NB-y1Y" firstAttribute="centerY" secondItem="XYX-p2-1zx" secondAttribute="centerY" id="R8O-7D-gdK"/>
+                                                <constraint firstItem="XeK-JX-9U3" firstAttribute="centerY" secondItem="XYX-p2-1zx" secondAttribute="centerY" id="Y1i-Zu-lhN"/>
+                                                <constraint firstItem="hIv-NB-y1Y" firstAttribute="trailing" secondItem="XYX-p2-1zx" secondAttribute="trailingMargin" id="ZWN-62-Rqq"/>
+                                                <constraint firstItem="hIv-NB-y1Y" firstAttribute="leading" secondItem="XeK-JX-9U3" secondAttribute="trailing" constant="40" id="u95-ic-0rg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.063639871779999996" green="0.19010648129999999" blue="0.51005792620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="questionLabel" destination="XeK-JX-9U3" id="Vsi-Me-VbC"/>
+                                            <outlet property="questionTextField" destination="hIv-NB-y1Y" id="9UF-ni-L1m"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AnswersCell" rowHeight="160" id="F7K-E7-NAB" customClass="AnswersCell" customModule="Millionaire" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="414" height="160"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F7K-E7-NAB" id="WWx-pf-zce">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.063639871779999996" green="0.19010648129999999" blue="0.51005792620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CorrectAnswerCell" rowHeight="100" id="gp0-DM-Mw3" customClass="CorrectAnswerCell" customModule="Millionaire" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="288" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gp0-DM-Mw3" id="j1U-fT-1MK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.063639871779999996" green="0.19010648129999999" blue="0.51005792620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddQuestionCell" rowHeight="100" id="Jsm-Pm-jQr" customClass="AddQuestionCell" customModule="Millionaire" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="388" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jsm-Pm-jQr" id="Sge-DO-2Rl">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.063639871779999996" green="0.19010648129999999" blue="0.51005792620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
@@ -428,6 +471,12 @@
                                     <action selector="addQuestion:" destination="QV8-KX-crf" eventType="touchUpInside" id="bRL-jk-gah"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавить вопросы" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSj-Tb-ZDl">
+                                <rect key="frame" x="20" y="70" width="269.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0xL-Sx-O29"/>
                         <color key="backgroundColor" red="0.063639871779999996" green="0.19010648129999999" blue="0.51005792620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -436,11 +485,13 @@
                             <constraint firstItem="0xL-Sx-O29" firstAttribute="bottom" secondItem="F2K-LJ-Hvq" secondAttribute="bottom" id="92M-pT-P8l"/>
                             <constraint firstItem="0xL-Sx-O29" firstAttribute="trailing" secondItem="F2K-LJ-Hvq" secondAttribute="trailing" id="CWL-Jn-BqF"/>
                             <constraint firstItem="0xL-Sx-O29" firstAttribute="bottom" secondItem="xie-nt-ybk" secondAttribute="bottom" constant="11.499999999999545" id="EGV-Sw-CKR"/>
+                            <constraint firstItem="uSj-Tb-ZDl" firstAttribute="leading" secondItem="0xL-Sx-O29" secondAttribute="leading" constant="20" id="L1j-ZY-QGn"/>
                             <constraint firstItem="SP7-96-eZ6" firstAttribute="top" secondItem="0xL-Sx-O29" secondAttribute="top" id="MmV-D2-3RU"/>
                             <constraint firstItem="xie-nt-ybk" firstAttribute="centerX" secondItem="AYp-oZ-hbg" secondAttribute="centerX" id="Wzp-0w-nRh"/>
+                            <constraint firstItem="uSj-Tb-ZDl" firstAttribute="top" secondItem="SP7-96-eZ6" secondAttribute="bottom" constant="-4" id="b8l-Wu-ygj"/>
                             <constraint firstItem="SP7-96-eZ6" firstAttribute="leading" secondItem="0xL-Sx-O29" secondAttribute="leading" constant="20" id="nsU-Rm-Gtc"/>
                             <constraint firstItem="0xL-Sx-O29" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SP7-96-eZ6" secondAttribute="trailing" symbolic="YES" id="s2f-ky-hPD"/>
-                            <constraint firstItem="F2K-LJ-Hvq" firstAttribute="top" secondItem="0xL-Sx-O29" secondAttribute="top" constant="40" id="v2B-J6-z3u"/>
+                            <constraint firstItem="F2K-LJ-Hvq" firstAttribute="top" secondItem="0xL-Sx-O29" secondAttribute="top" constant="70" id="v2B-J6-z3u"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Cbv-Tp-PyD"/>
