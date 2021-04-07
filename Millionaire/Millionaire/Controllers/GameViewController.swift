@@ -50,7 +50,7 @@ class GameViewController: UIViewController {
         Question(question: "Какая из перечисленных башен самая низкая?", answers: ["A":"Останкинская","B":"Эйфелева","C":"Пизанская","D":"Спасская"], correctAnswer: "C")
     ]
     
-    var answersCount = 0
+    var answersCount = Observable<Int>(0)
     
     let gameSession = GameSession()
     
@@ -73,6 +73,10 @@ class GameViewController: UIViewController {
         setupBackground()
         prepareQuestions(questions: questions)
         configureQuestion()
+        self.answersCount.addObserver(self, options: [.initial, .new]) { (answersCount, _) in
+            self.questionsCounter.text = "Вопрос \(answersCount) из \(self.questions.count)"
+        }
+        
     }
     
     private func setupBackground() {
@@ -83,13 +87,11 @@ class GameViewController: UIViewController {
     }
     
     private func configureQuestion() {
-        answersCount += 1
+        answersCount.value += 1
         
-        if answersCount <= questions.count {
-            
-            questionsCounter.text = "Вопрос \(answersCount) из \(questions.count)"
-            
-            let currentQuestion = questions[answersCount - 1]
+        if answersCount.value <= questions.count {
+       
+            let currentQuestion = questions[answersCount.value - 1]
             question.text = currentQuestion.question
             answerA.setTitle("A: " + (currentQuestion.answers["A"] ?? ""), for: .normal)
             answerB.setTitle("B: " + (currentQuestion.answers["B"] ?? ""), for: .normal)
@@ -101,7 +103,7 @@ class GameViewController: UIViewController {
     }
     
     private func checkAnswer(_ sender: UIButton) {
-        let currentQuestion = questions[answersCount - 1]
+        let currentQuestion = questions[answersCount.value - 1]
         let correctAnswer = currentQuestion.correctAnswer
         let answersDict = ["A":0,"B":1,"C":2,"D":3]
         
@@ -121,15 +123,15 @@ class GameViewController: UIViewController {
         let title = "Игра окончена!"
         var message = ""
         
-        if (self.answersCount - 1) < self.questions.count {
-            message = "Вы ответили на \(self.answersCount - 1) из \(self.questions.count) вопросов"
+        if (self.answersCount.value - 1) < self.questions.count {
+            message = "Вы ответили на \(self.answersCount.value - 1) из \(self.questions.count) вопросов"
         } else {
-            message = "Вы ответили на все вопросы"
+            message = "Вы ответили на все вопросы верно!"
         }
         
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: { _ in
-            self.delegate?.didEndGame(withResult: self.answersCount - 1, with: self.questions.count)
+            self.delegate?.didEndGame(withResult: self.answersCount.value - 1, with: self.questions.count)
             self.dismiss(animated: true)
         })
         alertVC.addAction(action)
