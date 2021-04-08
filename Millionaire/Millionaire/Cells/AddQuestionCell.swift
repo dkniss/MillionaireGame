@@ -8,6 +8,8 @@
 import UIKit
 
 class AddQuestionCell: UITableViewCell {
+    
+    @IBOutlet weak var saveQuestionButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
