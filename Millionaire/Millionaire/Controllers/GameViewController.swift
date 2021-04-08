@@ -41,7 +41,18 @@ class GameViewController: UIViewController {
         checkAnswer(sender)
     }
     
-    var questions = Game.shared.questions
+    var gameQuestions = [
+        Question(question: "Как называется популярный рецепт приготовления макарон с мясом?", answers: ["A":"По-деревенски","B":"По-флотски","C":"По-братски","D":"По-божески"], correctAnswer: "B"),
+        Question(question: "Какой флаг развевается над пиратским судном?", answers: ["A":"Грустный Роберт","B":"Печальный Рональд","C":"Смешливый Роналд","D":"Веселый Роджер"], correctAnswer: "D"),
+        Question(question: "Какой газ преобладает в атмосфере Земли?", answers: ["A":"Кислород","B":"Азот","C":"Углекислый газ","D":"Водород"], correctAnswer: "B"),
+        Question(question: "Какой вид спорта не входит в современное пятиборье?", answers: ["A":"Метание копья","B":"Верховая езда","C":"Фехтование","D":"Плавание"], correctAnswer: "A"),
+        Question(question: "Что является характеристикой коллекционного вина?", answers: ["A":"Стойкость","B":"Выдержка","C":"Выносливость","D":"Трезвость"], correctAnswer: "B"),
+        Question(question: "Какая из перечисленных башен самая низкая?", answers: ["A":"Останкинская","B":"Эйфелева","C":"Пизанская","D":"Спасская"], correctAnswer: "C")
+    ]
+    
+    var userQuestions = Game.shared.questions
+    
+    var questions = [Question]()
     
     let gameSession = GameSession()
     
@@ -59,6 +70,7 @@ class GameViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.questions = gameQuestions + userQuestions
         Game.shared.gameSession = gameSession
         self.delegate = gameSession
         setupBackground()

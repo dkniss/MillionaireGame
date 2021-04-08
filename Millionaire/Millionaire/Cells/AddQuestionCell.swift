@@ -37,7 +37,6 @@ class AddQuestionCell: UITableViewCell, UITextFieldDelegate {
         self.textFieldB.delegate = self
         self.textFieldC.delegate = self
         self.textFieldD.delegate = self
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
