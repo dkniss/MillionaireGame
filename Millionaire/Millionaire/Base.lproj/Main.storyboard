@@ -394,7 +394,7 @@
                                 <color key="separatorColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddQuestionCell" rowHeight="359" id="BRE-6v-DZv" customClass="AddQuestionCell" customModule="Millionaire" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddQuestionCell" rowHeight="359" id="BRE-6v-DZv" customClass="AddQuestionCell" customModule="Millionaire" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="359"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BRE-6v-DZv" id="9yC-8J-4js">
@@ -469,9 +469,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9MK-NN-Fl3">
-                                                    <rect key="frame" x="192" y="280" width="204" height="69"/>
+                                                    <rect key="frame" x="192" y="259" width="204" height="90"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="69" id="lPd-6Z-2hf"/>
+                                                        <constraint firstAttribute="height" constant="90" id="lPd-6Z-2hf"/>
                                                         <constraint firstAttribute="width" constant="204" id="r6o-Qi-bCe"/>
                                                     </constraints>
                                                 </pickerView>
@@ -500,10 +500,10 @@
                                                 <constraint firstItem="TnT-d1-FEz" firstAttribute="leading" secondItem="kga-GD-Mt3" secondAttribute="trailing" constant="10" id="UD4-wR-YEl"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="TnT-d1-FEz" secondAttribute="trailing" constant="10" id="ajk-PY-F21"/>
                                                 <constraint firstItem="Sw3-kH-dHJ" firstAttribute="leading" secondItem="9yC-8J-4js" secondAttribute="leading" constant="18" id="bXP-sQ-wC4"/>
+                                                <constraint firstItem="9MK-NN-Fl3" firstAttribute="top" secondItem="EMT-N8-SKb" secondAttribute="bottom" constant="11" id="cJx-5g-z7X"/>
                                                 <constraint firstItem="gO2-Y2-BWV" firstAttribute="leading" secondItem="Sw3-kH-dHJ" secondAttribute="trailing" constant="10" id="dHB-ZD-T8J"/>
                                                 <constraint firstAttribute="bottom" secondItem="9MK-NN-Fl3" secondAttribute="bottom" constant="10" id="fGZ-Mk-3If"/>
                                                 <constraint firstItem="RJk-5f-ipU" firstAttribute="top" secondItem="d4k-Dg-f8N" secondAttribute="bottom" constant="23" id="hHJ-vZ-t7u"/>
-                                                <constraint firstItem="9MK-NN-Fl3" firstAttribute="top" secondItem="EMT-N8-SKb" secondAttribute="bottom" constant="32" id="iFO-jr-jUT"/>
                                                 <constraint firstItem="PkD-9L-mhC" firstAttribute="top" secondItem="hIv-NB-y1Y" secondAttribute="bottom" constant="8" symbolic="YES" id="kpu-ao-Bhc"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="EMT-N8-SKb" secondAttribute="trailing" constant="10" id="lGB-EU-HUQ"/>
                                                 <constraint firstItem="1uz-nh-0tW" firstAttribute="top" secondItem="TnT-d1-FEz" secondAttribute="bottom" constant="10" id="ora-Tu-MSb"/>

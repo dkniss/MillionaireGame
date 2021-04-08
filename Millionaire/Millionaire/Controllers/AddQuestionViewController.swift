@@ -14,12 +14,25 @@ class AddQuestionViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addQuestionButton: UIButton!
     @IBOutlet weak var saveQuestionButton: UIButton!
+    
     var questionsToAdd = 1
+    var questionsToSave = [Question]()
+    var keyboardDismissTapGesture: UIGestureRecognizer?
     
     // MARK: IBActions
     
     @IBAction func exit(_ sender: UIButton) {
-        self.dismiss(animated: true)
+        if questionsToSave.isEmpty {
+            self.dismiss(animated: true)
+        } else {
+            let alertVC = UIAlertController(title: "Title", message: "Message", preferredStyle: .actionSheet)
+            let action = UIAlertAction(title: "Cохранить", style: .default) { _ in
+                self.dismiss(animated: true)
+            }
+            alertVC.addAction(action)
+            self.present(alertVC, animated: true)
+        }
+        
     }
     
     @IBAction func addQuestion(_ sender: UIButton) {
@@ -37,6 +50,23 @@ class AddQuestionViewController: UIViewController {
         tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(notification:)),
+            name:UIResponder.keyboardWillHideNotification,
+            object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        
+        super.viewWillDisappear(animated)
     }
     
     // MARK: Private functions
@@ -47,6 +77,27 @@ class AddQuestionViewController: UIViewController {
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if keyboardDismissTapGesture == nil {
+            keyboardDismissTapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(sender:)))
+            keyboardDismissTapGesture?.cancelsTouchesInView = false
+            self.view.addGestureRecognizer(keyboardDismissTapGesture!)
+        }
+    }
+    
+    @objc private func dismissKeyboard(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+            if keyboardDismissTapGesture != nil {
+                self.view.removeGestureRecognizer(keyboardDismissTapGesture!)
+                keyboardDismissTapGesture = nil
+            }
+        }
+    
+   
 }
 
 extension AddQuestionViewController: UITableViewDataSource, UITableViewDelegate {
@@ -69,7 +120,9 @@ extension AddQuestionViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AddQuestionCell", for: indexPath) as? AddQuestionCell else { return UITableViewCell() }
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AddQuestionCell", for: indexPath) as? AddQuestionCell
+        else { return UITableViewCell() }
     
         let cellColor = UIColor(white: 0.7, alpha: 0.5)
         cell.backgroundColor = cellColor
