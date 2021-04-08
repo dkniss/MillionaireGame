@@ -13,6 +13,7 @@ class AddQuestionViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addQuestionButton: UIButton!
+    @IBOutlet weak var saveQuestionButton: UIButton!
     var questionsToAdd = 1
     
     // MARK: IBActions
@@ -24,6 +25,8 @@ class AddQuestionViewController: UIViewController {
     @IBAction func addQuestion(_ sender: UIButton) {
         self.questionsToAdd += 1
         self.tableView.reloadData()
+        let indexPath = IndexPath(row: 0, section: self.questionsToAdd - 1)
+        self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
     
     
@@ -32,6 +35,8 @@ class AddQuestionViewController: UIViewController {
         super.viewDidLoad()
         setupBackground()
         tableView.backgroundColor = .clear
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     // MARK: Private functions
@@ -45,40 +50,33 @@ class AddQuestionViewController: UIViewController {
 }
 
 extension AddQuestionViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .clear
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return questionsToAdd
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = configureCell(indexPath: indexPath)
-        let cellColor = UIColor(white: 0.70,alpha: 0.3)
+    
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AddQuestionCell", for: indexPath) as? AddQuestionCell else { return UITableViewCell() }
+    
+        let cellColor = UIColor(white: 0.7, alpha: 0.5)
         cell.backgroundColor = cellColor
         return cell
     }
-    
-    private func configureCell(indexPath: IndexPath) -> UITableViewCell {
-        let defaultCell = UITableViewCell()
-        switch indexPath.row {
-        case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell", for: indexPath) as? QuestionCell else { return defaultCell }
-            return cell
-        case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AnswersCell", for: indexPath) as? AnswersCell else { return defaultCell }
-            return cell
-        case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CorrectAnswerCell", for: indexPath) as? CorrectAnswerCell else { return defaultCell }
-            return cell
-        case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AddQuestionCell", for: indexPath) as? AddQuestionCell else { return defaultCell }
-            return cell
-        default:
-            return defaultCell
-        }
-        
-    }
-    
-    
 }
+
+
+
+
