@@ -23,7 +23,7 @@ class AddQuestionViewController: UIViewController {
     // MARK: IBActions
     
     @IBAction func exit(_ sender: UIButton) {
-        if questionsCells.isEmpty && questionsToSave.isEmpty {
+        if questionsCells.isEmpty {
             self.dismiss(animated: true)
         } else {
             let alertVC = UIAlertController(title: "Хотите выйти?", message: "У вас остались несохраненные вопросы", preferredStyle: .actionSheet)
@@ -44,12 +44,9 @@ class AddQuestionViewController: UIViewController {
             alertVC.addAction(cancelAction)
             self.present(alertVC, animated: true)
         }
-        
     }
+    
     @IBAction func saveQuestionsButtonPressed(_ sender: UIButton) {
-        
-        
-        
         self.saveQuestions()
         self.questionsToSave.forEach { question in
             Game.shared.addQuestion(question)
@@ -58,6 +55,10 @@ class AddQuestionViewController: UIViewController {
         self.questionsCells.removeAll()
         self.questionsToAdd = 0
         self.tableView.reloadData()
+        let alertVC = UIAlertController(title: "Успешно!", message: "Ваши вопросы сохранены", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ок", style: .default)
+        alertVC.addAction(action)
+        self.present(alertVC, animated: true)
     }
     
     @IBAction func addQuestion(_ sender: UIButton) {
@@ -66,10 +67,7 @@ class AddQuestionViewController: UIViewController {
         let indexPath = IndexPath(row: 0, section: self.questionsToAdd - 1)
         self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackground()
@@ -116,7 +114,7 @@ class AddQuestionViewController: UIViewController {
             else { return }
             
             let answers = ["A":answerA, "B":answerB, "C":answerC, "D":answerD]
-            
+    
             let selectedPickerRow = cell.correctAnswerPicker.selectedRow(inComponent: 0)
             
             var correctAnswer: String {
@@ -140,7 +138,6 @@ class AddQuestionViewController: UIViewController {
             else {
                 showError()
                 return
-                
             }
             
             answers.forEach { (key,value) in
@@ -208,7 +205,6 @@ extension AddQuestionViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddQuestionCell", for: indexPath) as? AddQuestionCell
         else { return UITableViewCell() }

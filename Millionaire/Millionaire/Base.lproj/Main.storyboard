@@ -408,59 +408,59 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите вопрос" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hIv-NB-y1Y">
-                                                    <rect key="frame" x="129" y="11" width="255" height="34"/>
+                                                    <rect key="frame" x="129" y="11.5" width="255" height="36.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Варианты ответа" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkD-9L-mhC">
-                                                    <rect key="frame" x="136" y="53" width="142" height="21"/>
+                                                    <rect key="frame" x="136" y="57" width="142" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <color key="textColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sw3-kH-dHJ">
-                                                    <rect key="frame" x="18" y="89" width="17" height="21"/>
+                                                    <rect key="frame" x="18" y="93" width="17" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <color key="textColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите вариант ответа" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gO2-Y2-BWV">
-                                                    <rect key="frame" x="45" y="82" width="339" height="34"/>
+                                                    <rect key="frame" x="45" y="86" width="339" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kga-GD-Mt3">
-                                                    <rect key="frame" x="18" y="132" width="17" height="21"/>
+                                                    <rect key="frame" x="18" y="135" width="17" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <color key="textColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите вариант ответа" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TnT-d1-FEz">
-                                                    <rect key="frame" x="45" y="126" width="339" height="34"/>
+                                                    <rect key="frame" x="45" y="128" width="339" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4k-Dg-f8N">
-                                                    <rect key="frame" x="18" y="177" width="18" height="21"/>
+                                                    <rect key="frame" x="18" y="179" width="18" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <color key="textColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите вариант ответа" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1uz-nh-0tW">
-                                                    <rect key="frame" x="46" y="170" width="338" height="34"/>
+                                                    <rect key="frame" x="46" y="172" width="338" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJk-5f-ipU">
-                                                    <rect key="frame" x="18" y="221" width="18" height="21"/>
+                                                    <rect key="frame" x="18" y="222" width="18" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <color key="textColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите вариант ответа" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EMT-N8-SKb">
-                                                    <rect key="frame" x="46" y="214" width="338" height="34"/>
+                                                    <rect key="frame" x="46" y="215" width="338" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Правильный ответ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfX-u5-BuE">
                                                     <rect key="frame" x="18" y="304" width="154.5" height="21"/>
@@ -477,38 +477,37 @@
                                                 </pickerView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="PkD-9L-mhC" firstAttribute="top" secondItem="hIv-NB-y1Y" secondAttribute="bottom" constant="9" id="10i-YX-vTK"/>
                                                 <constraint firstItem="zfX-u5-BuE" firstAttribute="leading" secondItem="9yC-8J-4js" secondAttribute="leading" constant="18" id="1MU-8R-beB"/>
+                                                <constraint firstItem="TnT-d1-FEz" firstAttribute="centerY" secondItem="kga-GD-Mt3" secondAttribute="centerY" id="3B1-2q-QJo"/>
                                                 <constraint firstItem="9MK-NN-Fl3" firstAttribute="leading" secondItem="zfX-u5-BuE" secondAttribute="trailing" constant="19.5" id="5Zp-Yb-ElW"/>
+                                                <constraint firstItem="1uz-nh-0tW" firstAttribute="leading" secondItem="d4k-Dg-f8N" secondAttribute="trailing" constant="10" id="6RF-Nk-KTn"/>
                                                 <constraint firstItem="d4k-Dg-f8N" firstAttribute="top" secondItem="kga-GD-Mt3" secondAttribute="bottom" constant="24" id="6dw-MO-leK"/>
-                                                <constraint firstItem="1uz-nh-0tW" firstAttribute="leading" secondItem="d4k-Dg-f8N" secondAttribute="trailing" constant="10" id="8bj-Uf-S5X"/>
-                                                <constraint firstItem="EMT-N8-SKb" firstAttribute="leading" secondItem="RJk-5f-ipU" secondAttribute="trailing" constant="10" id="9Gg-0g-p8Q"/>
+                                                <constraint firstItem="EMT-N8-SKb" firstAttribute="centerY" secondItem="RJk-5f-ipU" secondAttribute="centerY" id="8Q1-zv-gSx"/>
+                                                <constraint firstItem="XeK-JX-9U3" firstAttribute="top" secondItem="9yC-8J-4js" secondAttribute="top" constant="18" id="8jB-1o-mNb"/>
+                                                <constraint firstItem="hIv-NB-y1Y" firstAttribute="top" secondItem="9yC-8J-4js" secondAttribute="top" constant="11.5" id="9Id-tw-GGP"/>
+                                                <constraint firstItem="TnT-d1-FEz" firstAttribute="leading" secondItem="kga-GD-Mt3" secondAttribute="trailing" constant="10" id="DP9-Aa-z9R"/>
+                                                <constraint firstItem="gO2-Y2-BWV" firstAttribute="leading" secondItem="Sw3-kH-dHJ" secondAttribute="trailing" constant="10" id="DzZ-Co-3d4"/>
                                                 <constraint firstItem="RJk-5f-ipU" firstAttribute="leading" secondItem="9yC-8J-4js" secondAttribute="leading" constant="18" id="EOS-wY-vOe"/>
                                                 <constraint firstItem="Sw3-kH-dHJ" firstAttribute="top" secondItem="PkD-9L-mhC" secondAttribute="bottom" constant="15" id="Ey3-uc-0p2"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="hIv-NB-y1Y" secondAttribute="trailing" constant="10" id="HOB-mW-l28"/>
                                                 <constraint firstItem="zfX-u5-BuE" firstAttribute="top" secondItem="RJk-5f-ipU" secondAttribute="bottom" constant="62" id="LGo-fG-xIC"/>
-                                                <constraint firstItem="gO2-Y2-BWV" firstAttribute="top" secondItem="PkD-9L-mhC" secondAttribute="bottom" constant="8" symbolic="YES" id="LKy-Ui-jh3"/>
                                                 <constraint firstItem="hIv-NB-y1Y" firstAttribute="leading" secondItem="XeK-JX-9U3" secondAttribute="trailing" constant="40" id="LUs-oq-c45"/>
-                                                <constraint firstItem="XeK-JX-9U3" firstAttribute="top" secondItem="9yC-8J-4js" secondAttribute="top" constant="18" id="NAi-20-xPC"/>
                                                 <constraint firstItem="kga-GD-Mt3" firstAttribute="leading" secondItem="9yC-8J-4js" secondAttribute="leading" constant="18" id="NgT-fI-r1n"/>
-                                                <constraint firstItem="hIv-NB-y1Y" firstAttribute="top" secondItem="9yC-8J-4js" secondAttribute="top" constant="11" id="P9e-8X-1Qy"/>
+                                                <constraint firstItem="1uz-nh-0tW" firstAttribute="centerY" secondItem="d4k-Dg-f8N" secondAttribute="centerY" id="NjG-2p-Lcs"/>
+                                                <constraint firstItem="EMT-N8-SKb" firstAttribute="leading" secondItem="RJk-5f-ipU" secondAttribute="trailing" constant="10" id="PX9-3M-oD5"/>
                                                 <constraint firstItem="kga-GD-Mt3" firstAttribute="top" secondItem="Sw3-kH-dHJ" secondAttribute="bottom" constant="22" id="PuB-1v-Aqb"/>
                                                 <constraint firstItem="XeK-JX-9U3" firstAttribute="leading" secondItem="9yC-8J-4js" secondAttribute="leading" constant="22" id="QUP-C6-dwO"/>
                                                 <constraint firstAttribute="bottom" secondItem="zfX-u5-BuE" secondAttribute="bottom" constant="34" id="Qr5-BY-z62"/>
-                                                <constraint firstItem="TnT-d1-FEz" firstAttribute="top" secondItem="gO2-Y2-BWV" secondAttribute="bottom" constant="10" id="S7o-sf-tvO"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="gO2-Y2-BWV" secondAttribute="trailing" constant="10" id="TsD-hy-LFY"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="1uz-nh-0tW" secondAttribute="trailing" constant="10" id="UAm-f9-AuM"/>
-                                                <constraint firstItem="TnT-d1-FEz" firstAttribute="leading" secondItem="kga-GD-Mt3" secondAttribute="trailing" constant="10" id="UD4-wR-YEl"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="TnT-d1-FEz" secondAttribute="trailing" constant="10" id="ajk-PY-F21"/>
                                                 <constraint firstItem="Sw3-kH-dHJ" firstAttribute="leading" secondItem="9yC-8J-4js" secondAttribute="leading" constant="18" id="bXP-sQ-wC4"/>
-                                                <constraint firstItem="9MK-NN-Fl3" firstAttribute="top" secondItem="EMT-N8-SKb" secondAttribute="bottom" constant="11" id="cJx-5g-z7X"/>
-                                                <constraint firstItem="gO2-Y2-BWV" firstAttribute="leading" secondItem="Sw3-kH-dHJ" secondAttribute="trailing" constant="10" id="dHB-ZD-T8J"/>
                                                 <constraint firstAttribute="bottom" secondItem="9MK-NN-Fl3" secondAttribute="bottom" constant="10" id="fGZ-Mk-3If"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gO2-Y2-BWV" secondAttribute="trailing" constant="10" id="g7Z-KX-UnI"/>
                                                 <constraint firstItem="RJk-5f-ipU" firstAttribute="top" secondItem="d4k-Dg-f8N" secondAttribute="bottom" constant="23" id="hHJ-vZ-t7u"/>
-                                                <constraint firstItem="PkD-9L-mhC" firstAttribute="top" secondItem="hIv-NB-y1Y" secondAttribute="bottom" constant="8" symbolic="YES" id="kpu-ao-Bhc"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="EMT-N8-SKb" secondAttribute="trailing" constant="10" id="lGB-EU-HUQ"/>
-                                                <constraint firstItem="1uz-nh-0tW" firstAttribute="top" secondItem="TnT-d1-FEz" secondAttribute="bottom" constant="10" id="ora-Tu-MSb"/>
+                                                <constraint firstItem="gO2-Y2-BWV" firstAttribute="centerY" secondItem="Sw3-kH-dHJ" secondAttribute="centerY" id="pvZ-el-r0I"/>
                                                 <constraint firstItem="d4k-Dg-f8N" firstAttribute="leading" secondItem="9yC-8J-4js" secondAttribute="leading" constant="18" id="t0s-Ze-6TH"/>
-                                                <constraint firstItem="EMT-N8-SKb" firstAttribute="top" secondItem="1uz-nh-0tW" secondAttribute="bottom" constant="10" id="tKe-qN-Ixn"/>
                                                 <constraint firstItem="PkD-9L-mhC" firstAttribute="centerX" secondItem="9yC-8J-4js" secondAttribute="centerX" id="xUR-Zs-sJ5"/>
                                             </constraints>
                                         </tableViewCellContentView>
