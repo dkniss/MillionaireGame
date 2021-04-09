@@ -22,6 +22,8 @@ class SettingsViewController: UIViewController {
             }
         }
     }
+    @IBOutlet weak var clearMyQuestionsLabel: UILabel!
+    @IBOutlet weak var clearMyQuestionsButton: UIButton!
     
     // MARK: IBActions
     
@@ -36,6 +38,15 @@ class SettingsViewController: UIViewController {
     
     @IBAction func exit(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+    
+    @IBAction func clearMyQuestions(_ sender: Any) {
+        let alertVC = UIAlertController(title: "Успешно!", message: "Все ваши вопросы удалены", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ок", style: .default) { _ in
+            Game.shared.clearQuestions()
+        }
+        alertVC.addAction(action)
+        self.present(alertVC, animated: true)
     }
     
     override func viewDidLoad() {

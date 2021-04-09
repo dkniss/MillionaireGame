@@ -53,6 +53,10 @@ class Game {
         self.questions.append(question)
     }
     
+    func clearQuestions() {
+        self.questions = []
+    }
+    
     
     private init() {
         self.records = self.recordsCaretaker.retrieveRecords()

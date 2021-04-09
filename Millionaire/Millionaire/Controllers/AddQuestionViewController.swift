@@ -67,7 +67,11 @@ class AddQuestionViewController: UIViewController {
         let indexPath = IndexPath(row: 0, section: self.questionsToAdd - 1)
         self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackground()
@@ -170,6 +174,8 @@ class AddQuestionViewController: UIViewController {
             keyboardDismissTapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(sender:)))
             keyboardDismissTapGesture?.cancelsTouchesInView = false
             self.view.addGestureRecognizer(keyboardDismissTapGesture!)
+            let indexPath = IndexPath(row: 0, section: self.questionsToAdd - 1)
+            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
     }
     

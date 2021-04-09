@@ -45,8 +45,9 @@ class AddQuestionCell: UITableViewCell, UITextFieldDelegate {
         // Configure the view for the selected state
     }
     
-     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        
         return true
     }
 

@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -212,39 +213,64 @@
                                 <color key="textColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Удалить мои вопросы" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvW-pj-hfC">
+                                <rect key="frame" x="20" y="199.5" width="292" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.94854587319999994" green="0.95589119199999995" blue="0.69014710189999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cUm-Gd-rG2">
                                 <rect key="frame" x="343" y="139" width="51" height="31"/>
                                 <connections>
                                     <action selector="shuffleQuestions:" destination="2Db-JF-ABh" eventType="valueChanged" id="dDE-iD-OrE"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf6-33-Rd4">
+                                <rect key="frame" x="352" y="194" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29.5" id="Tcj-yx-N6T"/>
+                                    <constraint firstAttribute="width" constant="30" id="pW6-jZ-QHs"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" backgroundImage="trash" catalog="system"/>
+                                <connections>
+                                    <action selector="clearMyQuestions:" destination="2Db-JF-ABh" eventType="touchUpInside" id="TFu-pe-a3w"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FQc-GP-kqN"/>
                         <color key="backgroundColor" red="0.063639871776103973" green="0.19010648131370544" blue="0.51005792617797852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lQ7-D8-lTs" firstAttribute="leading" secondItem="aXT-5B-Wq2" secondAttribute="leading" id="2D8-3w-OV3"/>
                             <constraint firstItem="lQ7-D8-lTs" firstAttribute="bottom" secondItem="cUm-Gd-rG2" secondAttribute="bottom" id="3Gx-U4-fIz"/>
+                            <constraint firstItem="cvW-pj-hfC" firstAttribute="centerY" secondItem="Qf6-33-Rd4" secondAttribute="centerY" id="5nO-qB-rbT"/>
                             <constraint firstItem="3hs-Ii-v5H" firstAttribute="leading" secondItem="FQc-GP-kqN" secondAttribute="leading" constant="20" id="BW0-GO-81F"/>
+                            <constraint firstItem="Qf6-33-Rd4" firstAttribute="leading" secondItem="cvW-pj-hfC" secondAttribute="trailing" constant="40" id="FF4-Cl-hcb"/>
                             <constraint firstItem="aXT-5B-Wq2" firstAttribute="leading" secondItem="FQc-GP-kqN" secondAttribute="leading" constant="20" id="Fuw-T0-qmy"/>
                             <constraint firstItem="lQ7-D8-lTs" firstAttribute="top" secondItem="cUm-Gd-rG2" secondAttribute="top" id="JyV-kr-ZHe"/>
+                            <constraint firstItem="cvW-pj-hfC" firstAttribute="leading" secondItem="FQc-GP-kqN" secondAttribute="leading" constant="20" id="NOL-E3-M26"/>
                             <constraint firstItem="FQc-GP-kqN" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aXT-5B-Wq2" secondAttribute="trailing" symbolic="YES" id="Nvl-2R-BcY"/>
                             <constraint firstItem="FQc-GP-kqN" firstAttribute="trailing" secondItem="cUm-Gd-rG2" secondAttribute="trailing" constant="22" id="Qor-CE-ow8"/>
                             <constraint firstItem="cUm-Gd-rG2" firstAttribute="leading" secondItem="lQ7-D8-lTs" secondAttribute="trailing" constant="31" id="dPC-0n-y3Q"/>
                             <constraint firstItem="aXT-5B-Wq2" firstAttribute="top" secondItem="FQc-GP-kqN" secondAttribute="top" constant="30" id="i7u-FP-vvG"/>
                             <constraint firstItem="FQc-GP-kqN" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3hs-Ii-v5H" secondAttribute="trailing" symbolic="YES" id="kti-T8-KMS"/>
                             <constraint firstItem="3hs-Ii-v5H" firstAttribute="top" secondItem="FQc-GP-kqN" secondAttribute="top" id="q5V-ml-Udk"/>
+                            <constraint firstItem="FQc-GP-kqN" firstAttribute="trailing" secondItem="Qf6-33-Rd4" secondAttribute="trailing" constant="32" id="rHd-sX-FcJ"/>
+                            <constraint firstItem="Qf6-33-Rd4" firstAttribute="top" secondItem="cUm-Gd-rG2" secondAttribute="bottom" constant="25" id="t5w-Ej-C7E"/>
                             <constraint firstItem="cUm-Gd-rG2" firstAttribute="top" secondItem="aXT-5B-Wq2" secondAttribute="bottom" constant="29" id="vwL-vC-2XZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qKq-W1-Hi9"/>
                     <connections>
+                        <outlet property="clearMyQuestionsButton" destination="Qf6-33-Rd4" id="eMR-uf-BD8"/>
+                        <outlet property="clearMyQuestionsLabel" destination="cvW-pj-hfC" id="ZVo-T9-elu"/>
                         <outlet property="shuffleQuestionsLabel" destination="lQ7-D8-lTs" id="ba1-ig-L3d"/>
                         <outlet property="shuffleQuestionsSwitch" destination="cUm-Gd-rG2" id="MeH-hN-w83"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LEy-2d-fgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="-956"/>
+            <point key="canvasLocation" x="1757.9710144927537" y="-956.25"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="Je9-Pk-K3P">
@@ -598,5 +624,9 @@
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="logo" width="564" height="251"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
