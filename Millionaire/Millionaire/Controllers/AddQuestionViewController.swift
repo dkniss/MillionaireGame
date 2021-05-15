@@ -144,11 +144,13 @@ class AddQuestionViewController: UIViewController {
                 return
             }
             
+            guard !(question.isEmpty && correctAnswer.isEmpty) else {
+                showError()
+                return
+            }
+            
             answers.forEach { (key,value) in
-                guard
-                    key != "",
-                    value != ""
-                else {
+                guard !(key.isEmpty && value.isEmpty) else {
                     showError()
                     return
                 }

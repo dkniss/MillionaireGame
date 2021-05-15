@@ -50,20 +50,15 @@ class GameViewController: UIViewController {
         Question(question: "Какая из перечисленных башен самая низкая?", answers: ["A":"Останкинская","B":"Эйфелева","C":"Пизанская","D":"Спасская"], correctAnswer: "C")
     ]
     
-    var userQuestions = Game.shared.questions
-    
-    var questions = [Question]()
-    
     let gameSession = GameSession()
-    
+    var userQuestions = Game.shared.questions
+    var questions = [Question]()
     var delegate: GameViewControllerDelegate?
     
     private var shuffleQuestionsStrategy: QuestionsSequenceStrategy {
-        let isQuestionsShuffled = Game.shared.isQuestionsShuffled
-        switch  isQuestionsShuffled {
-        case true:
+        if Game.shared.isQuestionsShuffled {
             return ShuffleQuestionsStrategy()
-        case false:
+        } else {
             return NonShuffleQuestionsStrategy()
         }
     }

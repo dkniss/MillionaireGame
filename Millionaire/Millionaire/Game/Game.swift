@@ -18,14 +18,13 @@ class Game {
     
     static let shared = Game()
     
-    weak var gameSession: GameSession?
+    var gameSession: GameSession?
     
     private(set) var questions: [Question] {
         didSet {
             questionsCaretaker.save(questions: questions)
         }
     }
-    
     
     var isQuestionsShuffled: Bool {
         guard let isShuffled = UserDefaults.standard.value(forKey: "switchOn") as? Bool else {return false}

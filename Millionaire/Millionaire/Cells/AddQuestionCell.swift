@@ -44,7 +44,6 @@ class AddQuestionCell: UITableViewCell, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-
 }
 
 extension AddQuestionCell: UIPickerViewDelegate, UIPickerViewDataSource {
