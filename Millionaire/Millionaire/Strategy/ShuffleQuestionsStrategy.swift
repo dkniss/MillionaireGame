@@ -12,7 +12,6 @@ protocol ShuffleStrategy {
 }
 
 class ShuffleQuestionsStrategy: ShuffleStrategy {
-    
     func shuffleQuestions(question: [Question]) -> [Question] {
         let shuffledQuestions = question.shuffled()
         return shuffledQuestions
