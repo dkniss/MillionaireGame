@@ -14,10 +14,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var shuffleQuestionsLabel: UILabel!
     @IBOutlet weak var shuffleQuestionsSwitch: UISwitch! {
         didSet {
-            switch Game.shared.isQuestionsShuffled {
-            case true:
+            if Game.shared.isQuestionsShuffled {
                 shuffleQuestionsSwitch.setOn(true, animated: true)
-            case false:
+            } else {
                 shuffleQuestionsSwitch.setOn(false, animated: true)
             }
         }
@@ -34,7 +33,6 @@ class SettingsViewController: UIViewController {
             UserDefaults.standard.setValue(false, forKey: "switchOn")
         }
     }
-    
     
     @IBAction func exit(_ sender: Any) {
         self.dismiss(animated: true)
@@ -62,5 +60,4 @@ class SettingsViewController: UIViewController {
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
-
 }

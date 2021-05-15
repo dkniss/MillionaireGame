@@ -25,9 +25,6 @@ class AddQuestionCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var correctAnswerLabel: UILabel!
     @IBOutlet weak var correctAnswerPicker: UIPickerView!
   
-   
-    
-
     override func awakeFromNib() {
         super.awakeFromNib()
         self.correctAnswerPicker.delegate = self
@@ -41,13 +38,10 @@ class AddQuestionCell: UITableViewCell, UITextFieldDelegate {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
      public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        
         return true
     }
 

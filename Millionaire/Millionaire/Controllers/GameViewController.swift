@@ -58,7 +58,7 @@ class GameViewController: UIViewController {
     
     var delegate: GameViewControllerDelegate?
     
-    private var shuffleQuestionsStrategy: ShuffleStrategy {
+    private var shuffleQuestionsStrategy: QuestionsSequenceStrategy {
         let isQuestionsShuffled = Game.shared.isQuestionsShuffled
         switch  isQuestionsShuffled {
         case true:
@@ -148,7 +148,7 @@ class GameViewController: UIViewController {
     }
     
     private func prepareQuestions(questions: [Question]) {
-        let preparedQuestions = self.shuffleQuestionsStrategy.shuffleQuestions(question: questions)
+        let preparedQuestions = self.shuffleQuestionsStrategy.processQuestions(questions)
         self.questions = preparedQuestions
     }
 }

@@ -21,7 +21,7 @@
 		4DC92BD42619E708004D02F9 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC92BD32619E708004D02F9 /* GameSession.swift */; };
 		4DC92BD8261A295F004D02F9 /* RecordsCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC92BD7261A295F004D02F9 /* RecordsCareTaker.swift */; };
 		4DD79EA7261DFED700111831 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD79EA6261DFED700111831 /* SettingsViewController.swift */; };
-		4DD79EAB261E05B400111831 /* ShuffleQuestionsStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD79EAA261E05B400111831 /* ShuffleQuestionsStrategy.swift */; };
+		4DD79EAB261E05B400111831 /* QuestionsSequenceStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD79EAA261E05B400111831 /* QuestionsSequenceStrategy.swift */; };
 		4DD79EB0261E205600111831 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD79EAF261E205600111831 /* Observable.swift */; };
 		4DD79EB3261E292C00111831 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD79EB2261E292C00111831 /* AddQuestionViewController.swift */; };
 		4DD79EC1261E37D500111831 /* AddQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD79EC0261E37D500111831 /* AddQuestionCell.swift */; };
@@ -46,7 +46,7 @@
 		4DC92BD32619E708004D02F9 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		4DC92BD7261A295F004D02F9 /* RecordsCareTaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCareTaker.swift; sourceTree = "<group>"; };
 		4DD79EA6261DFED700111831 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		4DD79EAA261E05B400111831 /* ShuffleQuestionsStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleQuestionsStrategy.swift; sourceTree = "<group>"; };
+		4DD79EAA261E05B400111831 /* QuestionsSequenceStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsSequenceStrategy.swift; sourceTree = "<group>"; };
 		4DD79EAF261E205600111831 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		4DD79EB2261E292C00111831 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
 		4DD79EC0261E37D500111831 /* AddQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionCell.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		4DD79EA9261E058E00111831 /* Strategy */ = {
 			isa = PBXGroup;
 			children = (
-				4DD79EAA261E05B400111831 /* ShuffleQuestionsStrategy.swift */,
+				4DD79EAA261E05B400111831 /* QuestionsSequenceStrategy.swift */,
 			);
 			path = Strategy;
 			sourceTree = "<group>";
@@ -242,7 +242,7 @@
 				4D6AA8AC2619AF5E00A21DD8 /* ViewController.swift in Sources */,
 				4DD79EA7261DFED700111831 /* SettingsViewController.swift in Sources */,
 				4D6AA8A82619AF5E00A21DD8 /* AppDelegate.swift in Sources */,
-				4DD79EAB261E05B400111831 /* ShuffleQuestionsStrategy.swift in Sources */,
+				4DD79EAB261E05B400111831 /* QuestionsSequenceStrategy.swift in Sources */,
 				4D6AA8AA2619AF5E00A21DD8 /* SceneDelegate.swift in Sources */,
 				4DC92BC12619B30A004D02F9 /* MenuViewController.swift in Sources */,
 				4DD79ECF261F5A1700111831 /* QuestionBuilder.swift in Sources */,

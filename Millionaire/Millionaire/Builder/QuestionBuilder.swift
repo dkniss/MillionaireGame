@@ -13,7 +13,6 @@ class QuestionBuilder {
     private(set) var answers = ["":""]
     private(set) var correctAnswer = ""
     
-    
     func build() -> Question {
         return Question(question: question, answers: answers, correctAnswer: correctAnswer)
     }
