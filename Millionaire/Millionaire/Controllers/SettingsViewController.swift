@@ -45,12 +45,4 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         setupBackground()
     }
-    
-    // MARK: Private Methods
-    private func setupBackground() {
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "Background")
-        backgroundImage.contentMode = .scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
-    }
 }

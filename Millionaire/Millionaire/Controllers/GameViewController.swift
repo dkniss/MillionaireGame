@@ -94,14 +94,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    // MARK:  Private methods
-    private func setupBackground() {
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "Background")
-        backgroundImage.contentMode = .scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
-    }
-    
+    // MARK:  Private methods    
     private func configureQuestion() {
         gameSession.correctAnswers.value += 1
         

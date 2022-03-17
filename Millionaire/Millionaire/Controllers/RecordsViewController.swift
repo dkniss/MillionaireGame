@@ -21,9 +21,6 @@ class RecordsViewController: UIViewController {
         setupBackground()
         tableView.backgroundColor = .clear
     }
-    
-    // MARK: Private methods
-   
 }
 
 // MARK: - TableView
