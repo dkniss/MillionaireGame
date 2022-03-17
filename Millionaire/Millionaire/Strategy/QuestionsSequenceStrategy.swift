@@ -23,4 +23,3 @@ class NonShuffleQuestionsStrategy: QuestionsSequenceStrategy {
         return question
     }
 }
-

@@ -8,7 +8,6 @@
 import Foundation
 
 class QuestionBuilder {
-    
     private(set) var question = ""
     private(set) var answers = ["" : ""]
     private(set) var correctAnswer = ""

@@ -8,13 +8,10 @@
 import UIKit
 
 class RecordsViewController: UIViewController {
-    
     // MARK: IBOutlets
-    
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: IBActions
-    
     @IBAction func exit(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
@@ -25,8 +22,7 @@ class RecordsViewController: UIViewController {
         tableView.backgroundColor = .clear
     }
     
-    // MARK: Private functions
-    
+    // MARK: Private methods
     private func setupBackground() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "Background")
@@ -35,6 +31,7 @@ class RecordsViewController: UIViewController {
     }
 }
 
+// MARK: - TableView
 extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         Game.shared.records.count

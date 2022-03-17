@@ -8,11 +8,13 @@
 import Foundation
 
 class RecordsCareTaker {
+    // MARK: - Properties
     let decoder = JSONDecoder()
     let encoder = JSONEncoder()
     
     private let key = "records"
-    
+
+    // MARK: - Methods
     func save(records: [Record]) {
         do {
             let data = try self.encoder.encode(records)

@@ -24,6 +24,3 @@ extension GameSession: GameViewControllerDelegate {
         Game.shared.gameSession = nil
     }
 }
-
-
-

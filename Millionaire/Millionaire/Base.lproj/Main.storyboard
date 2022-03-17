@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -122,7 +123,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCell" textLabel="mx6-VM-0lk" detailTextLabel="Im8-tZ-rDy" style="IBUITableViewCellStyleValue1" id="mik-lZ-hwA">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mik-lZ-hwA" id="xdx-bZ-T0v">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -265,7 +266,7 @@
                         <outlet property="clearMyQuestionsButton" destination="Qf6-33-Rd4" id="eMR-uf-BD8"/>
                         <outlet property="clearMyQuestionsLabel" destination="cvW-pj-hfC" id="ZVo-T9-elu"/>
                         <outlet property="shuffleQuestionsLabel" destination="lQ7-D8-lTs" id="ba1-ig-L3d"/>
-                        <outlet property="shuffleQuestionsSwitch" destination="cUm-Gd-rG2" id="MeH-hN-w83"/>
+                        <outlet property="shuffleQuestionsSwitch" destination="cUm-Gd-rG2" id="Xhe-MW-zJi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LEy-2d-fgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -421,7 +422,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddQuestionCell" rowHeight="359" id="BRE-6v-DZv" customClass="AddQuestionCell" customModule="Millionaire" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="359"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="359"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BRE-6v-DZv" id="9yC-8J-4js">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="359"/>

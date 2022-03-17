@@ -15,20 +15,21 @@ struct Record: Codable {
 }
 
 class Game {
-    
+    // MARK: - Properties
     static let shared = Game()
     
     var gameSession: GameSession?
     
+    var isQuestionsShuffled: Bool {
+        guard let isShuffled = UserDefaults.standard.value(forKey: "switchOn") as? Bool else {return false}
+        return isShuffled
+    }
+    
+    // MARK: - Private properties
     private(set) var questions: [Question] {
         didSet {
             questionsCaretaker.save(questions: questions)
         }
-    }
-    
-    var isQuestionsShuffled: Bool {
-        guard let isShuffled = UserDefaults.standard.value(forKey: "switchOn") as? Bool else {return false}
-        return isShuffled
     }
     
     private(set) var records: [Record] {
@@ -40,6 +41,13 @@ class Game {
     private let recordsCaretaker = RecordsCareTaker()
     private let questionsCaretaker = QuestionsCareTaker()
     
+    // MARK: - Init
+    private init() {
+        self.records = self.recordsCaretaker.retrieveRecords()
+        self.questions = self.questionsCaretaker.retrieveQuestions()
+    }
+    
+    // MARK: - Methods
     func addRecord(_ record: Record) {
         self.records.append(record)
     }
@@ -55,13 +63,6 @@ class Game {
     func clearQuestions() {
         self.questions = []
     }
-    
-    
-    private init() {
-        self.records = self.recordsCaretaker.retrieveRecords()
-        self.questions = self.questionsCaretaker.retrieveQuestions()
-    }
-    
 }
 
     

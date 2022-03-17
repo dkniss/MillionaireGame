@@ -8,20 +8,18 @@
 import UIKit
 
 class AddQuestionViewController: UIViewController {
-    
     // MARK: IBOutlets
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addQuestionButton: UIButton!
     @IBOutlet weak var saveQuestionButton: UIButton!
     
-    var questionsToAdd = 1
-    var questionsCells = [AddQuestionCell]()
-    var questionsToSave = [Question]()
-    var keyboardDismissTapGesture: UIGestureRecognizer?
+    // MARK: - Properties
+    private var questionsToAdd = 1
+    private var questionsCells = [AddQuestionCell]()
+    private var questionsToSave = [Question]()
+    private var keyboardDismissTapGesture: UIGestureRecognizer?
     
     // MARK: IBActions
-    
     @IBAction func exit(_ sender: UIButton) {
         if questionsCells.isEmpty {
             self.dismiss(animated: true)
@@ -90,13 +88,11 @@ class AddQuestionViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self)
-        
         super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    // MARK: Private functions
-    
+    // MARK: Private methods
     private func setupBackground() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "Background")
@@ -191,11 +187,9 @@ class AddQuestionViewController: UIViewController {
             keyboardDismissTapGesture = nil
         }
     }
-    
 }
 
 extension AddQuestionViewController: UITableViewDataSource, UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = .clear
@@ -222,7 +216,3 @@ extension AddQuestionViewController: UITableViewDataSource, UITableViewDelegate 
         return cell
     }
 }
-
-
-
-

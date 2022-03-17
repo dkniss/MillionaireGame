@@ -7,10 +7,8 @@
 
 import UIKit
 
-class AddQuestionCell: UITableViewCell, UITextFieldDelegate {
-    
-    // MARK: IBOutlets
-    
+class AddQuestionCell: UITableViewCell {
+    // MARK: - IBOutlets
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var questionTextField: UITextField!
     @IBOutlet weak var answersLabel: UILabel!
@@ -24,6 +22,10 @@ class AddQuestionCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var textFieldD: UITextField!
     @IBOutlet weak var correctAnswerLabel: UILabel!
     @IBOutlet weak var correctAnswerPicker: UIPickerView!
+    
+    // MARK: - Private properties
+    private let numberOfComponents = 1
+    private let numberOfRows = 4
   
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,20 +41,22 @@ class AddQuestionCell: UITableViewCell, UITextFieldDelegate {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
+}
+
+extension AddQuestionCell: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+       textField.resignFirstResponder()
+       return true
+   }
 }
 
 extension AddQuestionCell: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        self.numberOfComponents
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 4
+        self.numberOfRows
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -70,5 +74,3 @@ extension AddQuestionCell: UIPickerViewDelegate, UIPickerViewDataSource {
         }
     }
 }
-
-

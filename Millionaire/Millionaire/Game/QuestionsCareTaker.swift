@@ -8,11 +8,13 @@
 import Foundation
 
 class QuestionsCareTaker {
+    // MARK: - Properties
     let decoder = JSONDecoder()
     let encoder = JSONEncoder()
     
     private let key = "questions"
     
+    // MARK: - Methods
     func save(questions: [Question]) {
         do {
             let data = try self.encoder.encode(questions)
