@@ -125,12 +125,10 @@ class GameViewController: UIViewController {
         let correctAnswer = currentQuestion.correctAnswer
         
         if sender.tag == answersDict[correctAnswer] {
-            let alertVC = UIAlertController(title: "Правильно!", message: "Переходим к следующему вопросу", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            self.showAlert(title: "Правильно!", message: "Переходим к следующему вопросу") { [weak self] in
+                guard let self = self else { return }
                 self.configureQuestion()
-            })
-            alertVC.addAction(action)
-            present(alertVC, animated: true)
+            }
         } else {
             endGame()
         }
@@ -147,13 +145,11 @@ class GameViewController: UIViewController {
             message = "Вы ответили на все вопросы верно!"
         }
         
-        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .default, handler: { _ in
+        self.showAlert(title: title, message: message) { [weak self] in
+            guard let self = self else { return }
             self.delegate?.didEndGame(withResult: answersCount - 1, with: self.questions.count)
             self.dismiss(animated: true)
-        })
-        alertVC.addAction(action)
-        present(alertVC, animated: true)
+        }
     }
     
     private func prepareQuestions(questions: [Question]) {

@@ -36,12 +36,9 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func clearMyQuestions(_ sender: Any) {
-        let alertVC = UIAlertController(title: "Успешно!", message: "Все ваши вопросы удалены", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ок", style: .default) { _ in
+        self.showAlert(title: "Успешно!", message: "Все ваши вопросы удалены") {
             Game.shared.clearQuestions()
         }
-        alertVC.addAction(action)
-        self.present(alertVC, animated: true)
     }
     
     override func viewDidLoad() {

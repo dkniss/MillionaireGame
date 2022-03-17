@@ -27,6 +27,7 @@
 		4DD79ECB261F574D00111831 /* QuestionsCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD79ECA261F574D00111831 /* QuestionsCareTaker.swift */; };
 		4DD79ECF261F5A1700111831 /* QuestionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD79ECE261F5A1700111831 /* QuestionBuilder.swift */; };
 		7724D59B27E39E5200BA0270 /* ObservableOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724D59A27E39E5200BA0270 /* ObservableOptions.swift */; };
+		7724D59E27E3ADB700BA0270 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724D59D27E3ADB700BA0270 /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		4DD79ECA261F574D00111831 /* QuestionsCareTaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsCareTaker.swift; sourceTree = "<group>"; };
 		4DD79ECE261F5A1700111831 /* QuestionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBuilder.swift; sourceTree = "<group>"; };
 		7724D59A27E39E5200BA0270 /* ObservableOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableOptions.swift; sourceTree = "<group>"; };
+		7724D59D27E3ADB700BA0270 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		4D6AA8A62619AF5E00A21DD8 /* Millionaire */ = {
 			isa = PBXGroup;
 			children = (
+				7724D59C27E3ADA400BA0270 /* Extensions */,
 				4DD79ECD261F5A0200111831 /* Builder */,
 				4DD79EB5261E378000111831 /* Cells */,
 				4DD79EAE261E204600111831 /* Observable */,
@@ -165,6 +168,14 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
+		7724D59C27E3ADA400BA0270 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7724D59D27E3ADB700BA0270 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,6 +254,7 @@
 				4DD79EA7261DFED700111831 /* SettingsViewController.swift in Sources */,
 				4D6AA8A82619AF5E00A21DD8 /* AppDelegate.swift in Sources */,
 				4DD79EAB261E05B400111831 /* QuestionsSequenceStrategy.swift in Sources */,
+				7724D59E27E3ADB700BA0270 /* UIViewController+Ext.swift in Sources */,
 				4D6AA8AA2619AF5E00A21DD8 /* SceneDelegate.swift in Sources */,
 				4DC92BC12619B30A004D02F9 /* MenuViewController.swift in Sources */,
 				4DD79ECF261F5A1700111831 /* QuestionBuilder.swift in Sources */,

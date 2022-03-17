@@ -24,7 +24,10 @@ class AddQuestionViewController: UIViewController {
         if questionsCells.isEmpty {
             self.dismiss(animated: true)
         } else {
-            let alertVC = UIAlertController(title: "Хотите выйти?", message: "У вас остались несохраненные вопросы", preferredStyle: .actionSheet)
+            let alertVC = UIAlertController(title: "Хотите выйти?",
+                                            message: "У вас остались несохраненные вопросы",
+                                            preferredStyle: .actionSheet)
+            
             let saveAction = UIAlertAction(title: "Cохранить", style: .default) { [weak self] _ in
                 guard let self = self else { return }
                 self.saveQuestions()
@@ -53,10 +56,7 @@ class AddQuestionViewController: UIViewController {
         self.questionsCells.removeAll()
         self.questionsToAdd = 0
         self.tableView.reloadData()
-        let alertVC = UIAlertController(title: "Успешно!", message: "Ваши вопросы сохранены", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ок", style: .default)
-        alertVC.addAction(action)
-        self.present(alertVC, animated: true)
+        self.showAlert(title: "Успешно!", message: "Ваши вопросы сохранены", completion: nil)
     }
     
     @IBAction func addQuestion(_ sender: UIButton) {
@@ -67,7 +67,7 @@ class AddQuestionViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
     }
     
     override func viewDidLoad() {
