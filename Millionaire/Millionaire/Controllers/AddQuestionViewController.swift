@@ -24,26 +24,7 @@ class AddQuestionViewController: UIViewController {
         if questionsCells.isEmpty {
             self.dismiss(animated: true)
         } else {
-            let alertVC = UIAlertController(title: "Хотите выйти?",
-                                            message: "У вас остались несохраненные вопросы",
-                                            preferredStyle: .actionSheet)
-            
-            let saveAction = UIAlertAction(title: "Cохранить", style: .default) { [weak self] _ in
-                guard let self = self else { return }
-                self.saveQuestions()
-                self.questionsToSave.forEach { question in
-                    Game.shared.addQuestion(question)
-                }
-                self.questionsToSave.removeAll()
-                self.questionsCells.removeAll()
-                self.dismiss(animated: true)
-            }
-            let cancelAction = UIAlertAction(title: "Выйти", style: .destructive,handler: { _ in
-                self.dismiss(animated: true)
-            })
-            alertVC.addAction(saveAction)
-            alertVC.addAction(cancelAction)
-            self.present(alertVC, animated: true)
+            self.showActionSheet()
         }
     }
     
@@ -73,18 +54,8 @@ class AddQuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackground()
-        tableView.backgroundColor = .clear
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow(notification:)),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide(notification:)),
-                                               name:UIResponder.keyboardWillHideNotification,
-                                               object: nil)
+        setupTableView()
+        setupKeyboardObservers()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -93,21 +64,40 @@ class AddQuestionViewController: UIViewController {
     }
     
     // MARK: Private methods
+    private func showActionSheet() {
+        let alertVC = UIAlertController(title: "Хотите выйти?",
+                                        message: "У вас остались несохраненные вопросы",
+                                        preferredStyle: .actionSheet)
+        
+        let saveAction = UIAlertAction(title: "Cохранить", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            self.saveQuestions()
+            self.questionsToSave.forEach { question in
+                Game.shared.addQuestion(question)
+            }
+            self.questionsToSave.removeAll()
+            self.questionsCells.removeAll()
+            self.dismiss(animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "Выйти", style: .destructive,handler: { _ in
+            self.dismiss(animated: true)
+        })
+        alertVC.addAction(saveAction)
+        alertVC.addAction(cancelAction)
+        self.present(alertVC, animated: true)
+    }
+    
     private func saveQuestions() {
         questionsCells.forEach { cell in
-            let builder = QuestionBuilder()
             
-            guard let question = cell.questionTextField.text else { return }
             
-            guard
-                let answerA = cell.textFieldA.text,
-                let answerB = cell.textFieldB.text,
-                let answerC = cell.textFieldC.text,
-                let answerD = cell.textFieldD.text
-            else { return }
-            
+            guard let question = cell.questionTextField.text,
+                  let answerA = cell.textFieldA.text,
+                  let answerB = cell.textFieldB.text,
+                  let answerC = cell.textFieldC.text,
+                  let answerD = cell.textFieldD.text else { return }
+         
             let answers = ["A":answerA, "B":answerB, "C":answerC, "D":answerD]
-    
             let selectedPickerRow = cell.correctAnswerPicker.selectedRow(inComponent: 0)
             
             var correctAnswer: String {
@@ -125,26 +115,19 @@ class AddQuestionViewController: UIViewController {
                 }
             }
             
-            guard
-                question != "",
-                correctAnswer != ""
-            else {
+            guard !question.isEmpty, !correctAnswer.isEmpty else {
                 showError()
                 return
             }
-            
-            guard !(question.isEmpty && correctAnswer.isEmpty) else {
-                showError()
-                return
-            }
-            
+       
             answers.forEach { (key,value) in
-                guard !(key.isEmpty && value.isEmpty) else {
+                guard !key.isEmpty, !value.isEmpty else {
                     showError()
                     return
                 }
             }
             
+            let builder = QuestionBuilder()
             builder.setQuestion(question)
             builder.setAnswers(answers)
             builder.setCorrectAnswer(correctAnswer)
@@ -153,11 +136,25 @@ class AddQuestionViewController: UIViewController {
     }
     
     private func showError() {
-        let alertVC = UIAlertController(title: "Ошибка!", message: "Данные внесены некорректно" , preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ок", style: .destructive)
-        alertVC.addAction(action)
-        self.present(alertVC, animated: true)
-        
+        self.showAlert(title: "Ошибка!", message: "Данные внесены некорректно", completion: nil)
+    }
+    
+    private func setupTableView() {
+        tableView.backgroundColor = .clear
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    // MARK: - Keyboard
+    private func setupKeyboardObservers() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow(notification:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide(notification:)),
+                                               name:UIResponder.keyboardWillHideNotification,
+                                               object: nil)
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
@@ -182,6 +179,7 @@ class AddQuestionViewController: UIViewController {
     }
 }
 
+// MARK: - TableView
 extension AddQuestionViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()

@@ -33,9 +33,11 @@ extension RecordsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell",for: indexPath)
         
         let currentRecord = Game.shared.records[indexPath.row]
+        let text = "Результат: \(currentRecord.score)/\(currentRecord.questionsCount) (\(currentRecord.scoreInPercents)%)"
+        let detailText = DateFormatter.localizedString(from: currentRecord.date, dateStyle: .short, timeStyle: .short)
         
-        cell.textLabel?.text = "Результат: \(currentRecord.score)/\(currentRecord.questionsCount) (\(currentRecord.scoreInPercents)%)"
-        cell.detailTextLabel?.text = DateFormatter.localizedString(from: currentRecord.date, dateStyle: .short, timeStyle: .short)
+        cell.textLabel?.text = text
+        cell.detailTextLabel?.text = detailText
         cell.backgroundColor = .clear
         
         return cell
